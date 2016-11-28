@@ -1,0 +1,23 @@
+{
+  "name": "ejercicios-javascript",
+  "version": "1.0.0",
+  "description": "ejercicios de javascript variados",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaLefinir/EjerciciosJavascript.git"
+  },
+  "author": "Anita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnaLefinir/EjerciciosJavascript/issues"
+  },
+  "homepage": "https://github.com/AnaLefinir/EjerciciosJavascript#readme",
+  "dependencies": {
+    "mocha": "^3.2.0",
+    "npm": "^4.0.2"
+  }
+}
