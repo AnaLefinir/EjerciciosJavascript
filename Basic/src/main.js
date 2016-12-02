@@ -4,6 +4,10 @@
 function sayPepe() {
     return "Pepe!";
 }
+/* 1. Write a JavaScript program to display the current day and time in the following format.
+ Sample Output : Today is : Friday.
+ Current time is : 4 PM : 50 : 22
+ */
 
 function currentDayandTime() {
     var date = new Date();
@@ -57,13 +61,33 @@ function currentDayandTime() {
      }*/
 }
 
+
+
+/*2. Write a JavaScript program to print the contents of the current window */
+
 function printCurrentPage(){
     window.print();
 }
 
+
+/*3. Write a JavaScript program to get the current date.
+ Expected Output :
+ mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyyu
+*/
+
 function currentDate(){
-    
+    var date = new Date();
+    var day = date.getDate() <= 9 ? '0'+date.getDate() : date.getDate();
+    var month = (date.getMonth()+1) <= 9 ? '0'+(date.getMonth()+1) : (date.getMonth() + 1);
+    var year = date.getFullYear();
+    var strDateOne = day + '/' + month + '/' + year;
+    var strDateTwo = day + '-' + month + '-' + year;
+
+    console.log(strDateOne);
+    console.log(strDateTwo);
 }
+
+
 module.exports = {
     sayPepe: sayPepe
 };
