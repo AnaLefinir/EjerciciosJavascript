@@ -80,12 +80,53 @@ function currentDate(){
     var day = date.getDate() <= 9 ? '0'+date.getDate() : date.getDate();
     var month = (date.getMonth()+1) <= 9 ? '0'+(date.getMonth()+1) : (date.getMonth() + 1);
     var year = date.getFullYear();
-    var strDateOne = day + '/' + month + '/' + year;
-    var strDateTwo = day + '-' + month + '-' + year;
+    var strOne = day + '/' + month + '/' + year;
+    var strTwo = day + '-' + month + '-' + year;
+    var strDate = strOne + '\n' + strTwo;
 
-    console.log(strDateOne);
-    console.log(strDateTwo);
+    console.log(strOne);
+    console.log(strTwo);
+
+    return strDate;
 }
+
+/* 4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7. */
+
+function areaTriangle(a, b, c){
+    var s = (a+b+c)/2;
+    var innerCount = s*(s-a)*(s-b)*(s-c);
+    var area = Math.sqrt(innerCount);
+
+    console.log(area);
+
+    return area;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module.exports = {
