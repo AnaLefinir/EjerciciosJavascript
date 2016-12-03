@@ -103,10 +103,25 @@ function areaTriangle(a, b, c){
 }
 
 
+/*5. Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter
+ from the end of the string and attaching it to the front */
 
 
+function rotateString(string){
+    var stringToRotate = string;
+    var stringLength = stringToRotate.length;
 
+    for(var i = 0; i< stringLength; i++){
+        var lastCharacter = stringToRotate.slice(-1);
+        var strWithoutLastCharacter =stringToRotate.slice(0, -1);
 
+        stringToRotate= lastCharacter + strWithoutLastCharacter;
+        console.log(stringToRotate);
+    }
+
+    console.log("the result is: "+ stringToRotate);
+    return stringToRotate;
+}
 
 
 
