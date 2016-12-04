@@ -125,13 +125,44 @@ function rotateString(string){
 
 
 
+/* 6.Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar */
+
+function isLeapYear(number){
+    var year = number;
+    var response= "";
+    var yearIsInteger = Number.isInteger(year/4);
+    console.log(yearIsInteger);
+
+    if(yearIsInteger){
+        response = "Yes, is a leap year";
+    }else{
+        response ="No, is not a leap year";
+    }
+
+    console.log(response);
+    return response;
+}
 
 
+/**
+ *7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050
+ */
 
+function  findAllFistJanuaryMonday(){
+    var start = new Date("01/01/2014");
+    var end = new Date ("01/01/2050");
+    var allJanuaryFistMonday = [];
 
+    for(start; start <= end ; start.setFullYear(start.getFullYear()+1)){
 
+        if(start.getDay() === 1){
+            allJanuaryFistMonday.push(start.toString());
+        }
+    }
 
+    return allJanuaryFistMonday;
 
+}
 
 
 
