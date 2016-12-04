@@ -155,7 +155,7 @@ function  findAllFistJanuaryMonday(){
 
     for(start; start <= end ; start.setFullYear(start.getFullYear()+1)){
 
-        if(start.getDay() === 1){
+        if(start.getDay() === 0){
             allJanuaryFistMonday.push(start.toString());
         }
     }
@@ -165,10 +165,29 @@ function  findAllFistJanuaryMonday(){
 }
 
 
+/**
+ *8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to
+ * input a guess number. If the user input matches with guess number, the program will display a message "Good Work"
+ * otherwise display a message "Not matched"
+ *
+ */
 
 
+function isMatches (){
+    var userNumber = prompt("Please enter a number between 1 to 10", "1");
+    var randomNumber = Math.floor(Math.random() * 10 + 1);
+    var result;
 
+    userNumber = parseInt(userNumber);
 
+    if (userNumber === randomNumber){
+        result = "Good Work";
+    }else{
+        result = "Not matched";
+    }
+
+    return result;
+}
 
 
 
