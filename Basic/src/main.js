@@ -26,7 +26,6 @@ function currentDayandTime() {
     hours = hours ? hours : 12;
     strTimeAndDate = 'Today is: ' + dayList[day] + '.\nCurrent time is: ' + hours + ' ' + ampm + ' : ' + minutes + ' : ' + seconds;
 
-    console.log(strTimeAndDate);
 
     return strTimeAndDate;
 
@@ -83,8 +82,6 @@ function currentDate() {
     var strTwo = day + '-' + month + '-' + year;
     var strDate = strOne + '\n' + strTwo;
 
-    console.log(strOne);
-    console.log(strTwo);
 
     return strDate;
 }
@@ -95,8 +92,6 @@ function areaTriangle(a, b, c) {
     var s = (a + b + c) / 2;
     var innerCount = s * (s - a) * (s - b) * (s - c);
     var area = Math.sqrt(innerCount);
-
-    console.log(area);
 
     return area;
 }
@@ -115,10 +110,9 @@ function rotateString(string) {
         var strWithoutLastCharacter = stringToRotate.slice(0, -1);
 
         stringToRotate = lastCharacter + strWithoutLastCharacter;
-        console.log(stringToRotate);
     }
 
-    console.log("the result is: " + stringToRotate);
+
     return stringToRotate;
 }
 
@@ -129,7 +123,6 @@ function isLeapYear(number) {
     var year = number;
     var response = "";
     var yearIsInteger = Number.isInteger(year / 4);
-    console.log(yearIsInteger);
 
     if (yearIsInteger) {
         response = "Yes, is a leap year";
@@ -137,7 +130,6 @@ function isLeapYear(number) {
         response = "No, is not a leap year";
     }
 
-    console.log(response);
     return response;
 }
 
@@ -303,10 +295,14 @@ function toCelsius() {
  * */
 
 /**
- *
+ *12. Write a JavaScript program to get the website URL (loading page)
  */
 
+function getUrl(){
+    var urlCurrentPage = window.location.href;
 
+    return urlCurrentPage;
+}
 
 
 
