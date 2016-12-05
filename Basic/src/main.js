@@ -216,6 +216,53 @@ function dayLeftToChristmas() {
  *
  */
 
+function multiply() {
+    var x = document.getElementById("firstNumber").value,
+        y = document.getElementById("secondNumber").value,
+        result;
+
+    x = parseFloat(x);
+    y = parseFloat(y);
+
+    result = x*y;
+
+    document.getElementById("result").innerHTML = result;
+}
+
+
+function divide() {
+    var x = document.getElementById("firstNumber").value,
+        y = document.getElementById("secondNumber").value,
+        result;
+
+    x = parseFloat(x);
+    y = parseFloat(y);
+
+    result = x/y;
+
+    document.getElementById("result").innerHTML = result;
+}
+
+/* CóDIGO PARA EL HTML
+* <form>
+ 1° Number : <input type="text" id="firstNumber" /><br>
+ 2° Number: <input type="text" id="secondNumber" /><br>
+ <input type="button" onClick="multiply()" Value="Multiply" />
+ <input type="button" onClick="divide()" Value="Divide" />
+ </form>
+ <br><<br>
+
+ <p>The Result is : <br>
+ <strong id = "result"></strong>
+ </p>
+ *
+ *
+* */
+
+
+
+
+
 
 
 module.exports = {
