@@ -4,7 +4,9 @@
 function sayPepe() {
     return "Pepe!";
 }
-/* 1. Write a JavaScript program to display the current day and time in the following format.
+
+/**
+ * 1. Write a JavaScript program to display the current day and time in the following format.
  Sample Output : Today is : Friday.
  Current time is : 4 PM : 50 : 22
  */
@@ -18,7 +20,6 @@ function currentDayandTime() {
     var seconds = date.getSeconds();
     var ampm;
     var strTimeAndDate;
-    //var dayString;
 
 
     ampm = hours >= 12 ? 'PM' : 'AM';
@@ -29,46 +30,20 @@ function currentDayandTime() {
 
     return strTimeAndDate;
 
-    /*switch (day) {
-     case 0:
-     dayString = "Domingo";
-     break;
-
-     case 1:
-     dayString = "Lunes";
-     break;
-
-     case 2:
-     dayString = "Martes";
-     break;
-
-     case 3:
-     dayString = "Miercoles";
-     break;
-
-     case 4:
-     dayString = "Jueves";
-     break;
-
-     case 5:
-     dayString = "Viernes";
-     break;
-
-     case 6:
-     dayString = "Sábado";
-     break;
-     }*/
 }
 
 
-/*2. Write a JavaScript program to print the contents of the current window */
+/**
+ * 2. Write a JavaScript program to print the contents of the current window
+ * */
 
 function printCurrentPage() {
     window.print();
 }
 
 
-/*3. Write a JavaScript program to get the current date.
+/**
+ * 3. Write a JavaScript program to get the current date.
  Expected Output :
  mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyyu
  */
@@ -86,7 +61,9 @@ function currentDate() {
     return strDate;
 }
 
-/* 4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7. */
+/**
+ * 4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.
+ * */
 
 function areaTriangle(a, b, c) {
     var s = (a + b + c) / 2;
@@ -97,8 +74,10 @@ function areaTriangle(a, b, c) {
 }
 
 
-/*5. Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter
- from the end of the string and attaching it to the front */
+/**
+ * 5. Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter
+ from the end of the string and attaching it to the front
+ */
 
 
 function rotateString(string) {
@@ -117,7 +96,9 @@ function rotateString(string) {
 }
 
 
-/* 6.Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar */
+/**
+ * 6.Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar
+ * */
 
 function isLeapYear(number) {
     var year = number;
