@@ -259,6 +259,50 @@ function divide() {
  *
 * */
 
+/**
+ *11. Write a JavaScript program to convert temperatures to and from celsius, fahrenheit.
+ *
+ */
+
+function toFahrenheit() {
+    var celsius = document.getElementById("celsius").value;
+
+    celsius = parseFloat(celsius);
+
+    var result = (celsius * (9/5)) + 32;
+
+    document.getElementById("result").innerHTML = result;
+}
+
+function toCelsius() {
+    var fahrenheit = document.getElementById("fahrenheit").value;
+
+    fahrenheit = parseFloat(fahrenheit);
+
+    var result = (fahrenheit - 32) * (5/9);
+
+    document.getElementById("result").innerHTML = result;
+}
+
+
+/* CóDIGO PARA EL HTML
+
+ Celsius: <input type="text" id="celsius" /><br>
+ Fahrenheit: <input type="text" id="fahrenheit" /><br>
+ <input type="button" onClick="toFahrenheit()" Value="Convert To Fahrenheit" />
+ <input type="button" onClick="toCelsius()" Value="Convert To Celsius" />
+
+
+ <p>The Result is : <br>
+ <strong id = "result"></strong>
+ </p>
+ *
+ *
+ * */
+
+/**
+ * 
+ */
 
 
 
