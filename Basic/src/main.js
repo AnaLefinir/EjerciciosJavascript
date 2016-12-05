@@ -193,22 +193,29 @@ function isMatches() {
  */
 
 function dayLeftToChristmas() {
-    var today = new Date();
-    var christmasDay = newDate("12/25/2016");
-    var oneDay = 86400000;
+    var today = new Date(),
+        christmasDay = "12/25/" + today.getFullYear(),
+        christmasDate = new Date(christmasDay),
+        oneDayInMs = 86400000;
 
     today = today.getTime();
-    christmasDay = christmasDay2.getTime();
+    christmasDate = christmasDate.getTime();
 
 
-    var differenceInMs = christmasDay  - today;
+    var differenceInMs = christmasDate - today;
 
-    var daysLeftToChristmas = Math.round(differenceInMs / oneDay);
+    var daysLeftToChristmas = Math.round(differenceInMs / oneDayInMs);
 
-    console.log(daysLeftToChristmas);
-    //return daysLeftToChristmas;
+    return daysLeftToChristmas;
 
 }
+
+
+/**
+ *10. Write a JavaScript program to calculate multiplication and division of two numbers (input from user)
+ *
+ */
+
 
 
 module.exports = {
