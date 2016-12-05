@@ -261,7 +261,9 @@ function divide() {
 
 /**
  *11. Write a JavaScript program to convert temperatures to and from celsius, fahrenheit.
- *
+ *Expected Output :
+ 60°C is 140 °F
+ 45°F is 7.222222222222222°C
  */
 
 function toFahrenheit() {
@@ -271,7 +273,7 @@ function toFahrenheit() {
 
     var result = (celsius * (9/5)) + 32;
 
-    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").innerHTML = celsius + "°C is" + result + "°F";
 }
 
 function toCelsius() {
@@ -281,7 +283,7 @@ function toCelsius() {
 
     var result = (fahrenheit - 32) * (5/9);
 
-    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").innerHTML = fahrenheit + "°F is" + result + "°C";
 }
 
 
@@ -301,7 +303,7 @@ function toCelsius() {
  * */
 
 /**
- * 
+ *
  */
 
 
