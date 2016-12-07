@@ -2,7 +2,7 @@
  * Created by Anita on 27/11/2016.
  */
 var assert = require("assert"),
-    basicJavascript = require("../src/main.js"),
+    basicJavascript = require("../src/basic.js"),
     sinon = require('sinon');
 
 describe('currentDayAndTime', function () {
