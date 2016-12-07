@@ -1,9 +1,7 @@
 /**
  * Created by Anita on 27/11/2016.
  */
-function sayPepe() {
-    return "Pepe!";
-}
+
 
 /**
  * 1. Write a JavaScript program to display the current day and time in the following format.
@@ -11,20 +9,19 @@ function sayPepe() {
  Current time is : 4 PM : 50 : 22
  */
 
-function currentDayandTime() {
+function currentDayAndTime() {
     var date = new Date();
     var day = date.getDay();
-    var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+    var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
+    var minutes = date.getMinutes() >= 10 ? date.getMinutes() : '0' + (date.getMinutes());
+    var seconds = date.getSeconds() >= 10 ? date.getSeconds() : '0' + (date.getSeconds());
     var ampm;
     var strTimeAndDate;
 
 
     ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
-    hours = hours ? hours : 12;
     strTimeAndDate = 'Today is: ' + dayList[day] + '.\nCurrent time is: ' + hours + ' ' + ampm + ' : ' + minutes + ' : ' + seconds;
 
 
@@ -68,7 +65,7 @@ function currentDate() {
 function areaTriangle(a, b, c) {
     var s = (a + b + c) / 2;
     var innerCount = s * (s - a) * (s - b) * (s - c);
-    var area = Math.sqrt(innerCount);
+    var area = parseFloat(Math.sqrt(innerCount).toFixed(2));
 
     return area;
 }
@@ -89,6 +86,7 @@ function rotateString(string) {
         var strWithoutLastCharacter = stringToRotate.slice(0, -1);
 
         stringToRotate = lastCharacter + strWithoutLastCharacter;
+
     }
 
 
@@ -119,19 +117,19 @@ function isLeapYear(number) {
  *7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050
  */
 
-function findAllFistJanuaryMonday() {
+function findAllFistJanuarySunday() {
     var start = new Date("01/01/2014");
     var end = new Date("01/01/2050");
-    var allJanuaryFistMonday = [];
+    var allJanuaryFistSunday = [];
 
     for (start; start <= end; start.setFullYear(start.getFullYear() + 1)) {
 
         if (start.getDay() === 0) {
-            allJanuaryFistMonday.push(start.toString());
+            allJanuaryFistSunday.push(start.toString());
         }
     }
 
-    return allJanuaryFistMonday;
+    return allJanuaryFistSunday;
 
 }
 
@@ -145,7 +143,7 @@ function findAllFistJanuaryMonday() {
 
 
 function isMatches() {
-    var userNumber = prompt("Please enter a number between 1 to 10", "1");
+    var userNumber = Window.prompt("Please enter a number between 1 to 10", "1");
     var randomNumber = Math.floor(Math.random() * 10 + 1);
     var result;
 
@@ -169,15 +167,31 @@ function dayLeftToChristmas() {
     var today = new Date(),
         christmasDay = "12/25/" + today.getFullYear(),
         christmasDate = new Date(christmasDay),
-        oneDayInMs = 86400000;
+        oneDayInMs = 86400000,
+        daysLeftToChristmas,
+        differenceInMs,
+        date;
 
-    today = today.getTime();
+
+
+    date = today.getTime();
     christmasDate = christmasDate.getTime();
 
+    if (date > christmasDate) {
+        christmasDay = "12/25/" + (today.getFullYear() + 1);
+        christmasDate = new Date(christmasDay);
 
-    var differenceInMs = christmasDate - today;
+        differenceInMs = christmasDate - date;
+        daysLeftToChristmas = Math.round(differenceInMs / oneDayInMs);
 
-    var daysLeftToChristmas = Math.round(differenceInMs / oneDayInMs);
+    }else if(date === christmasDate){
+        daysLeftToChristmas = "Today is Christmas!";
+
+    }else{
+        differenceInMs = christmasDate - date;
+        daysLeftToChristmas = Math.round(differenceInMs / oneDayInMs);
+    }
+
 
     return daysLeftToChristmas;
 
@@ -197,7 +211,7 @@ function multiply() {
     x = parseFloat(x);
     y = parseFloat(y);
 
-    result = x*y;
+    result = x * y;
 
     document.getElementById("result").innerHTML = result;
 }
@@ -211,13 +225,13 @@ function divide() {
     x = parseFloat(x);
     y = parseFloat(y);
 
-    result = x/y;
+    result = x / y;
 
     document.getElementById("result").innerHTML = result;
 }
 
 /* CóDIGO PARA EL HTML
-* <form>
+ * <form>
  1° Number : <input type="text" id="firstNumber" /><br>
  2° Number: <input type="text" id="secondNumber" /><br>
  <input type="button" onClick="multiply()" Value="Multiply" />
@@ -230,7 +244,7 @@ function divide() {
  </p>
  *
  *
-* */
+ * */
 
 /**
  *11. Write a JavaScript program to convert temperatures to and from celsius, fahrenheit.
@@ -244,7 +258,7 @@ function toFahrenheit() {
 
     celsius = parseFloat(celsius);
 
-    var result = (celsius * (9/5)) + 32;
+    var result = (celsius * (9 / 5)) + 32;
 
     document.getElementById("result").innerHTML = celsius + "°C is" + result + "°F";
 }
@@ -254,7 +268,7 @@ function toCelsius() {
 
     fahrenheit = parseFloat(fahrenheit);
 
-    var result = (fahrenheit - 32) * (5/9);
+    var result = (fahrenheit - 32) * (5 / 9);
 
     document.getElementById("result").innerHTML = fahrenheit + "°F is" + result + "°C";
 }
@@ -279,15 +293,28 @@ function toCelsius() {
  *12. Write a JavaScript program to get the website URL (loading page)
  */
 
-function getUrl(){
+function getUrl() {
     var urlCurrentPage = window.location.href;
 
     return urlCurrentPage;
 }
 
 
-
-
 module.exports = {
-    sayPepe: sayPepe
+
+    currentDayAndTime: currentDayAndTime,
+    printCurrentPage: printCurrentPage,
+    currentDate: currentDate,
+    areaTriangle: areaTriangle,
+    rotateString: rotateString,
+    isLeapYear: isLeapYear,
+    findAllFistJanuarySunday: findAllFistJanuarySunday,
+    isMatches: isMatches,
+    dayLeftToChristmas: dayLeftToChristmas,
+    multiply: multiply,
+    divide: divide,
+    toFahrenheit: toFahrenheit,
+    toCelsius: toCelsius,
+    getUrl: getUrl
+
 };

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AnaLefinir/EjerciciosJavascript#readme",
   "dependencies": {
     "mocha": "^3.2.0",
-    "npm": "^4.0.2"
+    "npm": "^4.0.2",
+    "sinon": "^1.17.6"
   }
 }
