@@ -100,22 +100,50 @@ describe('findAllFistJanuarySunday', function () {
     });
 });
 
-/*
-describe('isMatches', function () {
-    it('should result a "Good Work"', sinon.test(function(){
-        sinon.stub(Math, "random", function(){
+
+describe('isMatches:yes', function () {
+
+    var window = {
+        prompt: function(){
+            return 1;
+        }
+    };
+
+    it('should result a "Good Work"', sinon.test(function() {
+        var stubMatch = sinon.stub(Math, "random", function () {
             return 0.01;
         });
 
-        //No funciona el stub de window y no se como carajo hacerlo funcionar.
-        //Tampoco encuentro info.
-        sinon.stub(Window, "prompt", function(){return(6)});
-        assert.equal("Good Work", basicJavascript.isMatches());
+        assert.equal("Good Work", basicJavascript.isMatches(window));
+
+        stubMatch.restore();
+
     }));
 
 });
 
-*/
+//Si pongo el test Not Matched dentro del test Matched con el mismo window.prompt = 1, genera errores raros.
+
+describe('isMatches:not', function () {
+
+    var window = {
+        prompt: function(){
+            return 9;
+        }
+    };
+
+    it('should result a "Not matched"', sinon.test(function() {
+        var stubNotMatch = sinon.stub(Math, "random", function () {
+            return 0.03;
+        });
+
+        assert.equal("Not matched", basicJavascript.isMatches(window));
+
+        stubNotMatch.restore();
+    }));
+});
+
+
 
 describe('dayLeftToChristmas', function () {
     it('should result a 358 days', sinon.test(function(){
@@ -170,19 +198,106 @@ describe('dayLeftToChristmas', function () {
 
 
 
-describe('multiply', function () {
+describe('multiply and divide functions', function () {
+
+
     it('should result 4', sinon.test(function(){
+        var document = {
+            getElementById: function(){}
+        };
+        var mockedElement = {
+            innerHTML: null
+        };
+        var getElementByIdStub = sinon.stub(document, "getElementById");
 
-        sinon.stub(document, "getElementById").withArgs('#firstNumber').returns({val: "2"});
-        sinon.stub(document, "getElementById").withArgs('#secondNumber').returns({val: "2"});
+        getElementByIdStub.withArgs('firstNumber').returns({value: "2"});
+        getElementByIdStub.withArgs('secondNumber').returns({value: "2"});
+        getElementByIdStub.withArgs('result').returns(mockedElement);
 
-        basicJavascript.multiply();
+        basicJavascript.multiply(document);
 
-        assert.equal(4, sinon.stub(document, "getElementById").withArgs("#result").innerHTML);
+        assert.equal(4, mockedElement.innerHTML);
+
+        getElementByIdStub.restore();
+
+    }));
+
+    it('should result 1', sinon.test(function(){
+        var document = {
+            getElementById: function(){}
+        };
+        var mockedElement = {
+            innerHTML: null
+        };
+        var getElementByIdStub = sinon.stub(document, "getElementById");
+
+        getElementByIdStub.withArgs('firstNumber').returns({value: "2"});
+        getElementByIdStub.withArgs('secondNumber').returns({value: "2"});
+        getElementByIdStub.withArgs('result').returns(mockedElement);
+
+        basicJavascript.divide(document);
+
+        assert.equal(1, mockedElement.innerHTML);
+
+        getElementByIdStub.restore();
+
+    }));
+
+
+});
+
+
+
+describe('toFahrenheit and toCelsius', function () {
+
+
+    it('should result 32', sinon.test(function(){
+        var document = {
+            getElementById: function(){}
+        };
+        var mockedElement = {
+            innerHTML: null
+        };
+        var getElementByIdStub = sinon.stub(document, "getElementById");
+
+        getElementByIdStub.withArgs('celsius').returns({value: "0"});
+        getElementByIdStub.withArgs('result').returns(mockedElement);
+
+        basicJavascript.toFahrenheit(document);
+
+        assert.equal("0°C is 32°F", mockedElement.innerHTML);
+
+        getElementByIdStub.restore();
+
+    }));
+
+    it('should result 0', sinon.test(function(){
+        var document = {
+            getElementById: function(){}
+        };
+        var mockedElement = {
+            innerHTML: null
+        };
+        var getElementByIdStub = sinon.stub(document, "getElementById");
+
+        getElementByIdStub.withArgs('fahrenheit').returns({value: "32"});
+        getElementByIdStub.withArgs('result').returns(mockedElement);
+
+        basicJavascript.toCelsius(document);
+
+        assert.equal("32°F is 0°C", mockedElement.innerHTML);
+
+        getElementByIdStub.restore();
 
     }));
 
 });
+
+
+
+
+
+
 
 /*
 

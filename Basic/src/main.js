@@ -142,8 +142,8 @@ function findAllFistJanuarySunday() {
  */
 
 
-function isMatches() {
-    var userNumber = Window.prompt("Please enter a number between 1 to 10", "1");
+function isMatches(window) {
+    var userNumber = window.prompt("Please enter a number between 1 to 10", "1");
     var randomNumber = Math.floor(Math.random() * 10 + 1);
     var result;
 
@@ -203,7 +203,7 @@ function dayLeftToChristmas() {
  *
  */
 
-function multiply() {
+function multiply(document) {
     var x = document.getElementById("firstNumber").value,
         y = document.getElementById("secondNumber").value,
         result;
@@ -217,7 +217,7 @@ function multiply() {
 }
 
 
-function divide() {
+function divide(document) {
     var x = document.getElementById("firstNumber").value,
         y = document.getElementById("secondNumber").value,
         result;
@@ -253,24 +253,24 @@ function divide() {
  45°F is 7.222222222222222°C
  */
 
-function toFahrenheit() {
+function toFahrenheit(document) {
     var celsius = document.getElementById("celsius").value;
 
     celsius = parseFloat(celsius);
 
     var result = (celsius * (9 / 5)) + 32;
 
-    document.getElementById("result").innerHTML = celsius + "°C is" + result + "°F";
+    document.getElementById("result").innerHTML = celsius + "°C is " + result + "°F";
 }
 
-function toCelsius() {
+function toCelsius(document) {
     var fahrenheit = document.getElementById("fahrenheit").value;
 
     fahrenheit = parseFloat(fahrenheit);
 
     var result = (fahrenheit - 32) * (5 / 9);
 
-    document.getElementById("result").innerHTML = fahrenheit + "°F is" + result + "°C";
+    document.getElementById("result").innerHTML = fahrenheit + "°F is " + result + "°C";
 }
 
 
