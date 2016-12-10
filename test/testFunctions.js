@@ -28,3 +28,17 @@ describe('isPalindrome', function () {
         assert.deepStrictEqual(true, functionsJavascript.isPalindrome("nurses run"));
     });
 });
+
+describe('combinationsOfWord', function(){
+    it('should return 13 combination from a "0123"', function(){
+        var arrayOfCombination = ["0123", "012", "01", "0", "123", "12", "1", "23","2", "3"];
+        assert.deepStrictEqual(arrayOfCombination, functionsJavascript.combinationsOfWord("0123"));
+    });
+});
+
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
