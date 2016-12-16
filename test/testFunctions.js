@@ -31,11 +31,31 @@ describe('isPalindrome', function () {
 
 describe('combinationsOfWord', function(){
     it('should return 13 combination from a "0123"', function(){
-        var arrayOfCombination = ["0123", "012", "01", "0", "123", "12", "1", "23","2", "3"];
-        assert.deepStrictEqual(arrayOfCombination, functionsJavascript.combinationsOfWord("0123"));
+        var combinationExpected = ["0123", "012", "01", "0", "123", "12", "1", "23","2", "3"].toString();
+        assert.deepStrictEqual(combinationExpected, functionsJavascript.combinationsOfWord("0123"));
     });
 });
 
+
+
+describe('combi', function(){
+    it('should return 6 combination from a "dog"', function(){
+        var combinationExpected = "d,do,dog,o,og,g";
+        assert.deepStrictEqual(combinationExpected, functionsJavascript.combi("dog"));
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
 
 describe('', function(){
     it('', function(){

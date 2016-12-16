@@ -44,56 +44,90 @@ function isPalindrome(string) {
 
 /**
  *Write a JavaScript function that generates all combinations of a string
+ * Example string : 'dog'
+ Expected Output : 'd,do,dog,o,og,g'
  */
 
+// ONE SOLUTION
 
 function combinationsOfWord(string) {
-    var result = [];
-    var string = string.replace(" ", "");
-    var stringToArray = string.split("");
-    var arrayLength = stringToArray.length;
-    var arrayToAnalyze = string.split("");
-    var arrayOne = arrayToAnalyze;
+    var string = string;
+    var resultPrimer = [];
 
-    for (var j = arrayLength; j > 0; j--) {
-        console.log("top"+arrayLength);
-        var arrayLengthOne = arrayOne.length;
-        console.log("top arrayone "+arrayLengthOne);
-
-        for (var i = arrayLengthOne; i > 0; i--) {
-            console.log("for two: "+arrayOne);
-
-            var two = arrayOne.join("");
-            two = two.toString();
-            result.push(two);
-
-            arrayOne.pop();
-            console.log("for two str: "+stringToArray);
-        }
-
-        stringToArray.shift();
-        arrayOne = stringToArray;
-        console.log("for one str: "+stringToArray);
-        console.log("for one: "+arrayOne);
-        console.log("bottom" +arrayLength);
+    for(i in string){
+        resultPrimer.push(combination2(string.slice(i)));
     }
-    console.log(result);
+
+    return resultPrimer.toString();
 }
 
+function combination2(string){
+    var srt = string;
+    var arraySrt = string.split("");
+    var arrayLength = arraySrt.length;
+    var result = [];
+
+    for (var i = arrayLength; i > 0; i--) {
+
+        var two = arraySrt.join("");
+        two = two.toString();
+        result.push(two);
+
+        arraySrt.pop();
+    }
+
+    return result;
+}
+
+// TWO SOLUTIONS
+
+function combi (string){
+    var stringGive = string;
+    var stringGiveToArray = stringGive.split("");
+    var strLength = stringGive.length;
+    var resultPrimer = [];
+
+
+    for( var i = 0; i < strLength; i++){
+        var str = stringGiveToArray.join("").toString();
+        resultPrimer.push(combi2(str));
+
+        stringGiveToArray.shift();
+    }
+
+    return resultPrimer.toString();
+}
+
+function combi2 (string){
+    var str = string;
+    var strLength = str.length;
+    var result = [];
+
+    for(var i = 1; i <= strLength; i++){
+        result.push(str.slice(0, i));
+    }
+    return result;
+}
+/**
+ *4. Write a JavaScript function that returns a passed string with letters in alphabetical order
+ * Example string : 'webmaster' Expected Output : 'abeemrstw'
+ *
+ */
+
+function alphabeticalOrder (string){
+    var str = string;
+    var arrayStr = str.split("");
+
+    arrayStr = arrayStr.sort().join("");
+
+    return arrayStr;
+}
 
 module.exports = {
     reverseANumber: reverseANumber,
     isPalindrome: isPalindrome,
-    combinationsOfWord: combinationsOfWord
-}
+    combinationsOfWord: combinationsOfWord,
+    combi: combi,
+    alphabeticalOrder: alphabeticalOrder
+};
 
-/*for(var i = arrayLength; i > 0; i--){
- var one = stringToArray.join("");
- one = one.toString();
- result.push(one);
-
- arrayToAnalyze.pop();
- }
-
- console.log(result);
- }*/
