@@ -123,11 +123,54 @@ function alphabeticalOrder (string){
     return arrayStr;
 }
 
+
+/**
+ *5. Write a JavaScript function that accepts a string as a parameter and converts
+ *  the first letter of each word of the string in upper case.
+ *
+ *Example string : 'the quick brown fox'
+ *Expected Output : 'The Quick Brown Fox '
+ */
+
+function toUpperCaseFirstWord(string){
+   var strArray = string.split(" ");
+   var result = [];
+
+   for(var i = 0; i < strArray.length; i++){
+       var str = toUpperCase(strArray[i]);
+        result.push(str);
+   }
+   result = result.join(" ");
+
+   return result;
+}
+
+function toUpperCase (string){
+    var str = string;
+    var result;
+
+    result = str.charAt(0).toUpperCase() + str.slice(1);
+
+    return result;
+}
+
+
+/**
+ * 
+ *
+ */
+
+
+
+
+
 module.exports = {
+
     reverseANumber: reverseANumber,
     isPalindrome: isPalindrome,
     combinationsOfWord: combinationsOfWord,
     combi: combi,
-    alphabeticalOrder: alphabeticalOrder
+    alphabeticalOrder: alphabeticalOrder,
+    toUpperCaseFirstWord: toUpperCaseFirstWord
 };
 

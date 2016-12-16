@@ -45,9 +45,10 @@ describe('combi', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
-
+describe('toUpperCaseFirstWord', function(){
+    it('should return "Ana Banana" from "ana banana"', function(){
+        var combinationExpected = "Ana Banana";
+        assert.deepStrictEqual(combinationExpected, functionsJavascript.toUpperCaseFirstWord("ana banana"));
     });
 });
 
