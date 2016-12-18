@@ -234,6 +234,46 @@ function analizeLetter(string){
     return result;
 }
 
+/**
+ *8. Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.
+ *  Note : A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other
+ *  than 1 and itself.
+ *
+ */
+
+function isPrime (number) {
+    var result = "Yes";
+    var number= number;
+    var square = Math.sqrt(number);
+    var squareUp = Math.ceil(square);
+
+    for(var i = 2; i <= squareUp; i++){
+        var numberResult = number%i;
+
+        if(numberResult === 0){
+            result = "No";
+            break;
+        }
+    }
+
+    return result;
+}
+
+/**
+ *
+ * 9. Write a JavaScript function which accepts an argument and returns the type.
+ *Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
+ *
+ * */
+
+function whatTypeIs(something){
+    var result;
+
+    result = typeof something;
+
+    return result;
+}
+
 
 
 module.exports = {
@@ -245,6 +285,8 @@ module.exports = {
     alphabeticalOrder: alphabeticalOrder,
     toUpperCaseFirstWord: toUpperCaseFirstWord,
     theLongestWord: theLongestWord,
-    howManyVowels: howManyVowels
+    howManyVowels: howManyVowels,
+    isPrime: isPrime,
+    whatTypeIs: whatTypeIs
 };
 

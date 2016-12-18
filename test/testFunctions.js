@@ -64,6 +64,71 @@ describe('howManyVowels', function(){
     });
 });
 
+describe('isPrime', function(){
+    it('should return yes from 103', function(){
+        var resultExpected = "Yes";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isPrime(103));
+    });
+
+    it('should return no from 15', function(){
+        var resultExpected = "No";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isPrime(15));
+    });
+});
+
+describe('whatTypeIs', function(){
+    it('should return string from "Ana"', function(){
+        var resultExpected = "string";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.whatTypeIs("Ana"));
+    });
+
+    it('should return number from 2', function(){
+        var resultExpected = "number";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.whatTypeIs(2));
+    });
+
+    it('should return function', function(){
+        var elementToEvalute = function lala (){};
+        var resultExpected = "function";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.whatTypeIs(elementToEvalute));
+    });
+
+    it('should return boolean from false', function(){
+        var resultExpected = "boolean";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.whatTypeIs(false));
+    });
+
+    it('should return object from {chuchin: hermosa}', function(){
+        var elementToEvalute = {chuchin: "hermosa"};
+        var resultExpected = "object";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.whatTypeIs(elementToEvalute));
+    });
+
+    it('should return undefined', function(){
+        var elementToEvalute;
+        var resultExpected = "undefined";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.whatTypeIs(elementToEvalute));
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
 describe('', function(){
     it('', function(){
 
