@@ -159,9 +159,15 @@ describe('factors', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
+describe('amoutToCoins', function(){
+    it('should return "25,10,10,1" from 46', function(){
+        var resultExpected = "25,10,10,1";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.amoutToCoins(46, [25,10,5,2,1]));
+    });
 
+    it('should return "50,25,10,1,1" from 87', function(){
+        var resultExpected = "50,25,10,1,1";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.amoutToCoins(87, [50,25,10,5,1]));
     });
 });
 

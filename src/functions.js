@@ -468,6 +468,29 @@ function factors(number) {
     return result.toString();
 }
 
+/**
+ *14.Write a JavaScript function to convert an amount to coins.
+ *Sample function : amountTocoins(46, [25, 10, 5, 2, 1]) Here 46 is the amount. and 25, 10, 5, 2, 1 are coins.
+ * Output : 25, 10, 10, 1
+ */
+
+function amoutToCoins(number, array) {
+    var numberGiven = number;
+    var arrayGiven = array;
+    var result = [];
+
+    for(var i = 0; i < arrayGiven.length; i++){
+        if(numberGiven >= arrayGiven[i]){
+            do{
+                numberGiven -= arrayGiven[i];
+                result.push(arrayGiven[i]);
+            }while(numberGiven >= arrayGiven[i])
+        }
+    }
+    result = result.toString();
+
+    return result;
+}
 
 
 
@@ -486,6 +509,7 @@ module.exports = {
     matrix: matrix,
     findSecondLowestAndGreatest: findSecondLowestAndGreatest,
     isPerfect: isPerfect,
-    factors: factors
+    factors: factors,
+    amoutToCoins: amoutToCoins
 };
 
