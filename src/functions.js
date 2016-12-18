@@ -335,6 +335,57 @@ function makeMatrix(array){
 }
 
 
+/**
+ *11. Write a JavaScript function which will take an array of numbers stored and
+ * find the second lowest and second greatest numbers, respectively.
+ *Sample array : [1,2,3,4,5]
+ *Expected Output : 2,4
+ *
+ */
+
+function findSecondLowestAndGreatest(array){
+    var arrayGiven = array;
+    var result;
+    var secondLowest;
+    var secondGreatest;
+
+    secondLowest = findSecondLowest(arrayGiven).toString();
+    secondGreatest = findSecondGreatest(arrayGiven).toString();
+    result = secondLowest + ", " + secondGreatest;
+
+    return result;
+}
+
+function findSecondLowest(array){
+    var arrayGiven = array;
+    var result;
+
+    arrayGiven.sort();
+
+    if(arrayGiven[1] !== undefined){
+        result = arrayGiven[1];
+    }else{
+        result = "Not Match";
+    }
+
+    return result;
+}
+
+function findSecondGreatest(array){
+    var arrayGiven = array;
+    var result;
+
+    arrayGiven.sort(function(a, b){return b-a});
+
+    if(arrayGiven[1] !== undefined){
+        result = arrayGiven[1];
+    }else{
+        result = "Not Match";
+    }
+
+    return result;
+}
+
 module.exports = {
 
     reverseANumber: reverseANumber,
@@ -347,6 +398,7 @@ module.exports = {
     howManyVowels: howManyVowels,
     isPrime: isPrime,
     whatTypeIs: whatTypeIs,
-    matrix: matrix
+    matrix: matrix,
+    findSecondLowestAndGreatest: findSecondLowestAndGreatest
 };
 

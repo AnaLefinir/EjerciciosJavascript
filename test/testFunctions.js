@@ -123,9 +123,15 @@ describe('matrix', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
+describe('findSecondLowestAndGreatest', function(){
+    it('should return from array "2,4"', function(){
+        var resultExpected = "2, 4";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.findSecondLowestAndGreatest([1,2,3,4,5]));
+    });
 
+    it('should return from array "Not Match, Not Match"', function(){
+        var resultExpected = "Not Match, Not Match";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.findSecondLowestAndGreatest([1]));
     });
 });
 
