@@ -111,9 +111,15 @@ describe('whatTypeIs', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
+describe('matrix', function(){
+    it('should return a matrix identity of 4x4', function(){
+        var resultExpected = "\n1000\n0100\n0010\n0001\n";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.matrix(4));
+    });
 
+    it('should return new line', function(){
+        var resultExpected = "\n";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.matrix(0));
     });
 });
 

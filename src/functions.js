@@ -274,6 +274,65 @@ function whatTypeIs(something){
     return result;
 }
 
+/**
+ *
+ *10. Write a JavaScript function which returns the n rows by n columns identity matrix.
+ *
+ */
+
+function matrix(number){
+    var numberGiven = number;
+    var makeArray;
+    var makeRows;
+    var result;
+
+    makeArray = makeFormat(numberGiven);
+    makeRows = makeIdentity(makeArray);
+    result = makeMatrix(makeRows);
+
+    return result;
+}
+
+function makeFormat (number){
+    var numberGiven = number;
+    var array = [];
+
+    array.length = numberGiven;
+    for(var i = 0; i < numberGiven; i++){
+        var array2 = [];
+        array2.length = numberGiven;
+        array2.fill(0);
+        array[i] = array2;
+    }
+
+    return array;
+}
+
+function makeIdentity(array){
+    var arrayGiven = array;
+
+    for(var i = 0; i < arrayGiven.length; i++){
+        for(var j = 0; j < arrayGiven.length; j++){
+            if(i === j){
+                arrayGiven[i][j] = 1;
+            }
+        }
+    }
+
+    return arrayGiven;
+}
+
+function makeMatrix(array){
+    var arrayGiven = array;
+    var result = "\n";
+
+    for(var i = 0; i < arrayGiven.length; i++){
+        var rows = arrayGiven[i].join("")+"\n";
+        result += rows;
+    }
+
+    return result;
+}
 
 
 module.exports = {
@@ -287,6 +346,7 @@ module.exports = {
     theLongestWord: theLongestWord,
     howManyVowels: howManyVowels,
     isPrime: isPrime,
-    whatTypeIs: whatTypeIs
+    whatTypeIs: whatTypeIs,
+    matrix: matrix
 };
 
