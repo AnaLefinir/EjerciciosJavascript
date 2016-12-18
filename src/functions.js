@@ -156,12 +156,43 @@ function toUpperCase (string){
 
 
 /**
- * 
- *
+ *6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string
+ *Example string : 'Web Development Tutorial' Expected Output : 'Development'
  */
 
+function theLongestWord(string){
+    var strToArray = string.split(" ");
+    var result;
+    var lengthest = [];
+    var otherStrings;
 
+    strToArray.sort();
+    lengthest.push(strToArray[0]);
+    result = lengthest.toString();
+    //---------------
+    otherStrings = otherWords(strToArray);
+    if(otherStrings !== ""){
+        result = result + ', ' + otherStrings;
+    }
 
+    return result;
+}
+
+function otherWords(array){
+    var arrayGiven = array;
+    var result = [];
+
+    for (var i = 1; i < arrayGiven.length; i++){
+        if(arrayGiven[0].length === arrayGiven[i].length){
+            if(arrayGiven[0] !== arrayGiven[i]){
+                result.push(arrayGiven[i]);
+            }
+        }
+    }
+    result = result.toString();
+
+    return result;
+}
 
 
 module.exports = {
@@ -171,6 +202,7 @@ module.exports = {
     combinationsOfWord: combinationsOfWord,
     combi: combi,
     alphabeticalOrder: alphabeticalOrder,
-    toUpperCaseFirstWord: toUpperCaseFirstWord
+    toUpperCaseFirstWord: toUpperCaseFirstWord,
+    theLongestWord: theLongestWord
 };
 
