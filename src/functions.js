@@ -386,6 +386,11 @@ function findSecondGreatest(array){
     return result;
 }
 
+
+/**
+ *
+ * 
+ */
 module.exports = {
 
     reverseANumber: reverseANumber,
