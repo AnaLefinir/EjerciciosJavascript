@@ -448,6 +448,28 @@ function sum(array) {
     return result;
 }
 
+/**
+ *13. Write a JavaScript function to compute the factors of a positive integer
+ *
+ *
+ */
+
+function factors(number) {
+    var numberGiven = number;
+    var result = [];
+
+    for(var i = 0; i <= numberGiven; i++){
+        var isFactor = numberGiven%i;
+        if(isFactor === 0){
+            result.push(i);
+        }
+    }
+
+    return result.toString();
+}
+
+
+
 
 module.exports = {
 
@@ -463,6 +485,7 @@ module.exports = {
     whatTypeIs: whatTypeIs,
     matrix: matrix,
     findSecondLowestAndGreatest: findSecondLowestAndGreatest,
-    isPerfect: isPerfect
+    isPerfect: isPerfect,
+    factors: factors
 };
 

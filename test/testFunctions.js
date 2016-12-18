@@ -147,9 +147,10 @@ describe('isPerfect', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
-
+describe('factors', function(){
+    it('should return "1, 2, 3, 4, 6, 12" from 12', function(){
+        var resultExpected = "1,2,3,4,6,12";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.factors(12));
     });
 });
 
