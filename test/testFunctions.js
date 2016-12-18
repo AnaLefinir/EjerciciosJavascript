@@ -135,6 +135,30 @@ describe('findSecondLowestAndGreatest', function(){
     });
 });
 
+describe('isPerfect', function(){
+    it('should return "Is a Perfect Number" from 28', function(){
+        var resultExpected = "Is a Perfect Number";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isPerfect(28));
+    });
+
+    it('should return "Is Not a Perfect Number" from 52', function(){
+        var resultExpected = "Is Not a Perfect Number";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isPerfect(52));
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
 describe('', function(){
     it('', function(){
 
