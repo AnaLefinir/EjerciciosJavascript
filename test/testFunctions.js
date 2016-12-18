@@ -148,9 +148,14 @@ describe('isPerfect', function(){
 });
 
 describe('factors', function(){
-    it('should return "1, 2, 3, 4, 6, 12" from 12', function(){
+    it('should return "1,2,3,4,6,12" from 12', function(){
         var resultExpected = "1,2,3,4,6,12";
         assert.deepStrictEqual(resultExpected, functionsJavascript.factors(12));
+    });
+
+    it('should return "1,17" from 17', function(){
+        var resultExpected = "1,17";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.factors(17));
     });
 });
 
