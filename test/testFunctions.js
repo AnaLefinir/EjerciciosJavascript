@@ -171,9 +171,15 @@ describe('amoutToCoins', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
+describe('bElevateN', function(){
+    it('should return 64 from input 4,3', function(){
+        var resultExpected = 64;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.bElevateN(4, 3));
+    });
 
+    it('should return 8 from input 2,3', function(){
+        var resultExpected = 8;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.bElevateN(2, 3));
     });
 });
 

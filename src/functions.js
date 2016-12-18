@@ -492,6 +492,21 @@ function amoutToCoins(number, array) {
     return result;
 }
 
+/**
+ *15. Write a JavaScript function to compute
+ * the value of b^n where n is the exponent and b is the bases. Accept b and n from the user and display the result
+ *
+ */
+
+function bElevateN(b, n){
+    var base = b;
+    var exponent = n;
+    var result;
+
+    result = Math.pow(base, exponent);
+
+    return result;
+}
 
 
 module.exports = {
@@ -510,6 +525,7 @@ module.exports = {
     findSecondLowestAndGreatest: findSecondLowestAndGreatest,
     isPerfect: isPerfect,
     factors: factors,
-    amoutToCoins: amoutToCoins
+    amoutToCoins: amoutToCoins,
+    bElevateN: bElevateN
 };
 
