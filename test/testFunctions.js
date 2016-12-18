@@ -24,7 +24,7 @@ describe('isPalindrome', function () {
         assert.deepStrictEqual(false, functionsJavascript.isPalindrome("dos"));
     });
 
-    it('should return a false from "nurses run"', function () {
+    it('should return a true from "nurses run"', function () {
         assert.deepStrictEqual(true, functionsJavascript.isPalindrome("nurses run"));
     });
 });
@@ -47,14 +47,20 @@ describe('combi', function(){
 
 describe('toUpperCaseFirstWord', function(){
     it('should return "Ana Banana" from "ana banana"', function(){
-        var combinationExpected = "Ana Banana";
-        assert.deepStrictEqual(combinationExpected, functionsJavascript.toUpperCaseFirstWord("ana banana"));
+        var resultExpected = "Ana Banana";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.toUpperCaseFirstWord("ana banana"));
     });
 });
 
-describe('', function(){
-    it('', function(){
+describe('howManyVowels', function(){
+    it('should 6 return from "chuchin es hermosa"', function(){
+        var resultExpected = 6;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.howManyVowels("chuchin es hermosa"));
+    });
 
+    it('should 0 return from "zzjlmn"', function(){
+        var resultExpected = 0;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.howManyVowels("zzjlmn"));
     });
 });
 

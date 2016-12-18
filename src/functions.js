@@ -195,6 +195,47 @@ function otherWords(array){
 }
 
 
+/**
+ *
+ * 7. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
+ Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here.
+ Example string : 'The quick brown fox'
+ Expected Output : 5
+ */
+
+
+function howManyVowels(string){
+    var str = string.toLowerCase().replace(/ +/g, "");
+    var strToArray = str.split("");
+    var count= 0;
+    var result;
+
+    for(var i = 0; i < strToArray.length; i++){
+        count += analizeLetter(strToArray[i]);
+    }
+    result = count;
+
+    return result;
+}
+
+function analizeLetter(string){
+    var str = string;
+    var vowels = 0;
+    var arrayOfVowels = ["a", "e", "i", "o", "u"];
+    var result;
+
+    for(var i = 0; i < arrayOfVowels.length; i++){
+        if(string === arrayOfVowels[i]){
+            vowels +=1;
+        }
+    }
+    result = vowels;
+
+    return result;
+}
+
+
+
 module.exports = {
 
     reverseANumber: reverseANumber,
@@ -203,6 +244,7 @@ module.exports = {
     combi: combi,
     alphabeticalOrder: alphabeticalOrder,
     toUpperCaseFirstWord: toUpperCaseFirstWord,
-    theLongestWord: theLongestWord
+    theLongestWord: theLongestWord,
+    howManyVowels: howManyVowels
 };
 
