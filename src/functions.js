@@ -533,7 +533,7 @@ function extractLetterO(string) {
 
 function occurrencesOfLetters(string){
     var stringGiven = string;
-    var resultOne = prerardToDisplay(stringGiven);
+    var resultOne = preraredToDisplay(stringGiven);
     var arrayToDisplay = [];
     var result;
 
@@ -546,7 +546,7 @@ function occurrencesOfLetters(string){
     return result;
 }
 
-function prerardToDisplay(string) {
+function preraredToDisplay(string) {
     var stringGiven = string.replace(/ +/g, "");
     var result = [];
     var strToArray = Array.from(stringGiven);
