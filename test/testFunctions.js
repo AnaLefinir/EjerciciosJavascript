@@ -183,6 +183,25 @@ describe('bElevateN', function(){
     });
 });
 
+describe('extractLetter', function(){
+    it('should return a string without the letter o', function(){
+        var resultExpected = "thequickbrwnfxjumpsverthelazydg";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.extractLetterO("thequickbrownfoxjumpsoverthelazydog"));
+    });
+});
+
+describe('occurrencesOfLetters', function(){
+    it('should return a string with all letters appearance from string given. All lowercase', function(){
+        var resultExpected = "The letter: a, appears 5 times. The letter: b, appears 1 times. The letter: n, appears 3 times.";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.occurrencesOfLetters("ana banana"));
+    });
+
+    it('should return a string with all letters appearance from string given identifying the capital letter', function(){
+        var resultExpected = "The letter: A, appears 1 times. The letter: a, appears 4 times. The letter: b, appears 1 times. The letter: n, appears 3 times.";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.occurrencesOfLetters("ana bAnana"));
+    });
+});
+
 describe('', function(){
     it('', function(){
 

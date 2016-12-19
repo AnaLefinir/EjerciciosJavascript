@@ -54,14 +54,14 @@ function combinationsOfWord(string) {
     var string = string;
     var resultPrimer = [];
 
-    for(i in string){
+    for (i in string) {
         resultPrimer.push(combination2(string.slice(i)));
     }
 
     return resultPrimer.toString();
 }
 
-function combination2(string){
+function combination2(string) {
     var srt = string;
     var arraySrt = string.split("");
     var arrayLength = arraySrt.length;
@@ -81,14 +81,14 @@ function combination2(string){
 
 // TWO SOLUTIONS
 
-function combi (string){
+function combi(string) {
     var stringGive = string;
     var stringGiveToArray = stringGive.split("");
     var strLength = stringGive.length;
     var resultPrimer = [];
 
 
-    for( var i = 0; i < strLength; i++){
+    for (var i = 0; i < strLength; i++) {
         var str = stringGiveToArray.join("").toString();
         resultPrimer.push(combi2(str));
 
@@ -98,12 +98,12 @@ function combi (string){
     return resultPrimer.toString();
 }
 
-function combi2 (string){
+function combi2(string) {
     var str = string;
     var strLength = str.length;
     var result = [];
 
-    for(var i = 1; i <= strLength; i++){
+    for (var i = 1; i <= strLength; i++) {
         result.push(str.slice(0, i));
     }
     return result;
@@ -114,7 +114,7 @@ function combi2 (string){
  *
  */
 
-function alphabeticalOrder (string){
+function alphabeticalOrder(string) {
     var str = string;
     var arrayStr = str.split("");
 
@@ -132,20 +132,20 @@ function alphabeticalOrder (string){
  *Expected Output : 'The Quick Brown Fox '
  */
 
-function toUpperCaseFirstWord(string){
-   var strArray = string.split(" ");
-   var result = [];
+function toUpperCaseFirstWord(string) {
+    var strArray = string.split(" ");
+    var result = [];
 
-   for(var i = 0; i < strArray.length; i++){
-       var str = toUpperCase(strArray[i]);
+    for (var i = 0; i < strArray.length; i++) {
+        var str = toUpperCase(strArray[i]);
         result.push(str);
-   }
-   result = result.join(" ");
+    }
+    result = result.join(" ");
 
-   return result;
+    return result;
 }
 
-function toUpperCase (string){
+function toUpperCase(string) {
     var str = string;
     var result;
 
@@ -160,7 +160,7 @@ function toUpperCase (string){
  *Example string : 'Web Development Tutorial' Expected Output : 'Development'
  */
 
-function theLongestWord(string){
+function theLongestWord(string) {
     var strToArray = string.split(" ");
     var result;
     var lengthest = [];
@@ -171,20 +171,20 @@ function theLongestWord(string){
     result = lengthest.toString();
     //---------------
     otherStrings = otherWords(strToArray);
-    if(otherStrings !== ""){
+    if (otherStrings !== "") {
         result = result + ', ' + otherStrings;
     }
 
     return result;
 }
 
-function otherWords(array){
+function otherWords(array) {
     var arrayGiven = array;
     var result = [];
 
-    for (var i = 1; i < arrayGiven.length; i++){
-        if(arrayGiven[0].length === arrayGiven[i].length){
-            if(arrayGiven[0] !== arrayGiven[i]){
+    for (var i = 1; i < arrayGiven.length; i++) {
+        if (arrayGiven[0].length === arrayGiven[i].length) {
+            if (arrayGiven[0] !== arrayGiven[i]) {
                 result.push(arrayGiven[i]);
             }
         }
@@ -204,13 +204,13 @@ function otherWords(array){
  */
 
 
-function howManyVowels(string){
+function howManyVowels(string) {
     var str = string.toLowerCase().replace(/ +/g, "");
     var strToArray = str.split("");
-    var count= 0;
+    var count = 0;
     var result;
 
-    for(var i = 0; i < strToArray.length; i++){
+    for (var i = 0; i < strToArray.length; i++) {
         count += analizeLetter(strToArray[i]);
     }
     result = count;
@@ -218,15 +218,15 @@ function howManyVowels(string){
     return result;
 }
 
-function analizeLetter(string){
+function analizeLetter(string) {
     var str = string;
     var vowels = 0;
     var arrayOfVowels = ["a", "e", "i", "o", "u"];
     var result;
 
-    for(var i = 0; i < arrayOfVowels.length; i++){
-        if(string === arrayOfVowels[i]){
-            vowels +=1;
+    for (var i = 0; i < arrayOfVowels.length; i++) {
+        if (string === arrayOfVowels[i]) {
+            vowels += 1;
         }
     }
     result = vowels;
@@ -241,16 +241,16 @@ function analizeLetter(string){
  *
  */
 
-function isPrime (number) {
+function isPrime(number) {
     var result = "Yes";
-    var number= number;
+    var number = number;
     var square = Math.sqrt(number);
     var squareUp = Math.ceil(square);
 
-    for(var i = 2; i <= squareUp; i++){
-        var numberResult = number%i;
+    for (var i = 2; i <= squareUp; i++) {
+        var numberResult = number % i;
 
-        if(numberResult === 0){
+        if (numberResult === 0) {
             result = "No";
             break;
         }
@@ -266,7 +266,7 @@ function isPrime (number) {
  *
  * */
 
-function whatTypeIs(something){
+function whatTypeIs(something) {
     var result;
 
     result = typeof something;
@@ -280,7 +280,7 @@ function whatTypeIs(something){
  *
  */
 
-function matrix(number){
+function matrix(number) {
     var numberGiven = number;
     var makeArray;
     var makeRows;
@@ -293,12 +293,12 @@ function matrix(number){
     return result;
 }
 
-function makeFormat (number){
+function makeFormat(number) {
     var numberGiven = number;
     var array = [];
 
     array.length = numberGiven;
-    for(var i = 0; i < numberGiven; i++){
+    for (var i = 0; i < numberGiven; i++) {
         var array2 = [];
         array2.length = numberGiven;
         array2.fill(0);
@@ -308,12 +308,12 @@ function makeFormat (number){
     return array;
 }
 
-function makeIdentity(array){
+function makeIdentity(array) {
     var arrayGiven = array;
 
-    for(var i = 0; i < arrayGiven.length; i++){
-        for(var j = 0; j < arrayGiven.length; j++){
-            if(i === j){
+    for (var i = 0; i < arrayGiven.length; i++) {
+        for (var j = 0; j < arrayGiven.length; j++) {
+            if (i === j) {
                 arrayGiven[i][j] = 1;
             }
         }
@@ -322,12 +322,12 @@ function makeIdentity(array){
     return arrayGiven;
 }
 
-function makeMatrix(array){
+function makeMatrix(array) {
     var arrayGiven = array;
     var result = "\n";
 
-    for(var i = 0; i < arrayGiven.length; i++){
-        var rows = arrayGiven[i].join("")+"\n";
+    for (var i = 0; i < arrayGiven.length; i++) {
+        var rows = arrayGiven[i].join("") + "\n";
         result += rows;
     }
 
@@ -343,7 +343,7 @@ function makeMatrix(array){
  *
  */
 
-function findSecondLowestAndGreatest(array){
+function findSecondLowestAndGreatest(array) {
     var arrayGiven = array;
     var result;
     var secondLowest;
@@ -356,30 +356,32 @@ function findSecondLowestAndGreatest(array){
     return result;
 }
 
-function findSecondLowest(array){
+function findSecondLowest(array) {
     var arrayGiven = array;
     var result;
 
     arrayGiven.sort();
 
-    if(arrayGiven[1] !== undefined){
+    if (arrayGiven[1] !== undefined) {
         result = arrayGiven[1];
-    }else{
+    } else {
         result = "Not Match";
     }
 
     return result;
 }
 
-function findSecondGreatest(array){
+function findSecondGreatest(array) {
     var arrayGiven = array;
     var result;
 
-    arrayGiven.sort(function(a, b){return b-a});
+    arrayGiven.sort(function (a, b) {
+        return b - a
+    });
 
-    if(arrayGiven[1] !== undefined){
+    if (arrayGiven[1] !== undefined) {
         result = arrayGiven[1];
-    }else{
+    } else {
         result = "Not Match";
     }
 
@@ -399,7 +401,7 @@ function findSecondGreatest(array){
  *
  */
 
-function isPerfect (number) {
+function isPerfect(number) {
     var numberGiven = number;
     var result;
     var arrayOfDivider;
@@ -407,9 +409,9 @@ function isPerfect (number) {
 
     arrayOfDivider = divider(numberGiven);
     sumDividers = sum(arrayOfDivider);
-    if(numberGiven === sumDividers){
+    if (numberGiven === sumDividers) {
         result = "Is a Perfect Number";
-    }else{
+    } else {
         result = "Is Not a Perfect Number";
     }
 
@@ -418,12 +420,12 @@ function isPerfect (number) {
 }
 
 
-function divider (number){
+function divider(number) {
     var numberGiven = number;
     var result;
     var divider = [];
 
-    for(var i = 1; i <= numberGiven-1; i++) {
+    for (var i = 1; i <= numberGiven - 1; i++) {
         var resto = numberGiven % i;
 
         if (resto === 0) {
@@ -458,9 +460,9 @@ function factors(number) {
     var numberGiven = number;
     var result = [];
 
-    for(var i = 0; i <= numberGiven; i++){
-        var isFactor = numberGiven%i;
-        if(isFactor === 0){
+    for (var i = 0; i <= numberGiven; i++) {
+        var isFactor = numberGiven % i;
+        if (isFactor === 0) {
             result.push(i);
         }
     }
@@ -479,12 +481,12 @@ function amoutToCoins(number, array) {
     var arrayGiven = array;
     var result = [];
 
-    for(var i = 0; i < arrayGiven.length; i++){
-        if(numberGiven >= arrayGiven[i]){
-            do{
+    for (var i = 0; i < arrayGiven.length; i++) {
+        if (numberGiven >= arrayGiven[i]) {
+            do {
                 numberGiven -= arrayGiven[i];
                 result.push(arrayGiven[i]);
-            }while(numberGiven >= arrayGiven[i])
+            } while (numberGiven >= arrayGiven[i])
         }
     }
     result = result.toString();
@@ -498,7 +500,7 @@ function amoutToCoins(number, array) {
  *
  */
 
-function bElevateN(b, n){
+function bElevateN(b, n) {
     var base = b;
     var exponent = n;
     var result;
@@ -507,6 +509,76 @@ function bElevateN(b, n){
 
     return result;
 }
+
+/**
+ *
+ * 16. Write a JavaScript function to extract unique characters from a string.
+ * Example string : "thequickbrownfoxjumpsoverthelazydog"
+ * Expected Output : "thequickbrwnfxjumpsverthelazydg"
+ */
+
+function extractLetterO(string) {
+    var stringToEvaluate = string;
+    var result;
+
+    result = stringToEvaluate.replace(/o/gi, '');
+
+    return result;
+}
+
+/**
+ * 17. Write a JavaScript function to get the number of occurrences of each letter in specified string.
+ *
+ */
+
+function occurrencesOfLetters(string){
+    var stringGiven = string;
+    var resultOne = prerardToDisplay(stringGiven);
+    var arrayToDisplay = [];
+    var result;
+
+    for(i in resultOne){
+        var strForCollect = "The letter: " + resultOne[i].letter + ", appears " + resultOne[i].countOfLetter + " times."
+        arrayToDisplay.push(strForCollect);
+    }
+    result = arrayToDisplay.join(" ");
+
+    return result;
+}
+
+function prerardToDisplay(string) {
+    var stringGiven = string.replace(/ +/g, "");
+    var result = [];
+    var strToArray = Array.from(stringGiven);
+    var index = 0;
+
+
+    strToArray = strToArray.sort();
+    //Se que este for deberia ser partido en dos funciones, un for aca y el otro for en otra funcion, pero no se me ocurre
+    // como dado que estan intimamente relacionados.
+    for (var i = index; i < strToArray.length; i = index) {
+        index++;
+        var obj={};
+        obj.letter = strToArray[i];
+        obj.countOfLetter = 1;
+        for (var j = i + 1; j < strToArray.length;) {
+            if (strToArray[i] === strToArray[j]) {
+                j++;
+                obj.countOfLetter += 1;
+                index = j;
+            } else {
+                index = j;
+                break;
+            }
+
+        }
+        result.push(obj);
+    }
+
+    return result;
+}
+
+
 
 
 module.exports = {
@@ -526,6 +598,8 @@ module.exports = {
     isPerfect: isPerfect,
     factors: factors,
     amoutToCoins: amoutToCoins,
-    bElevateN: bElevateN
+    bElevateN: bElevateN,
+    extractLetterO: extractLetterO,
+    occurrencesOfLetters: occurrencesOfLetters
 };
 
