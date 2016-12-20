@@ -162,12 +162,12 @@ describe('factors', function(){
 describe('amoutToCoins', function(){
     it('should return "25,10,10,1" from 46', function(){
         var resultExpected = "25,10,10,1";
-        assert.deepStrictEqual(resultExpected, functionsJavascript.amoutToCoins(46, [25,10,5,2,1]));
+        assert.deepStrictEqual(resultExpected, functionsJavascript.amountToCoins(46, [25,10,5,2,1]));
     });
 
     it('should return "50,25,10,1,1" from 87', function(){
         var resultExpected = "50,25,10,1,1";
-        assert.deepStrictEqual(resultExpected, functionsJavascript.amoutToCoins(87, [50,25,10,5,1]));
+        assert.deepStrictEqual(resultExpected, functionsJavascript.amountToCoins(87, [50,25,10,5,1]));
     });
 });
 
@@ -200,6 +200,34 @@ describe('occurrencesOfLetters', function(){
         var resultExpected = "The letter: A, appears 1 times. The letter: a, appears 4 times. The letter: b, appears 1 times. The letter: n, appears 3 times.";
         assert.deepStrictEqual(resultExpected, functionsJavascript.occurrencesOfLetters("ana bAnana"));
     });
+});
+
+describe('searchBinaryForIndex', function(){
+    it('should return index 2', function(){
+        var resultExpected = 2;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.searchBinaryForIndex([1,2,4,5,8], 4));
+    });
+
+    it('should return index 4', function(){
+        var resultExpected = 4;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.searchBinaryForIndex([1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23], 6));
+    });
+});
+
+describe('biggerElementsThan', function(){
+    it('should return all elements bigger than 10', function(){
+        var resultExpected = "85,15,55";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.biggerElementsThan([85,15,1,5,8,55,3], 10));
+    });
+
+    it('should return "Not match"', function(){
+        var resultExpected = "Not match";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.biggerElementsThan([2,5,8,9], 10));
+    });
+});
+
+describe('', function(){
+
 });
 
 describe('', function(){

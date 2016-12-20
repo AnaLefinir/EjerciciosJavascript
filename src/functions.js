@@ -476,7 +476,7 @@ function factors(number) {
  * Output : 25, 10, 10, 1
  */
 
-function amoutToCoins(number, array) {
+function amountToCoins(number, array) {
     var numberGiven = number;
     var arrayGiven = array;
     var result = [];
@@ -531,13 +531,13 @@ function extractLetterO(string) {
  *
  */
 
-function occurrencesOfLetters(string){
+function occurrencesOfLetters(string) {
     var stringGiven = string;
     var resultOne = preraredToDisplay(stringGiven);
     var arrayToDisplay = [];
     var result;
 
-    for(i in resultOne){
+    for (i in resultOne) {
         var strForCollect = "The letter: " + resultOne[i].letter + ", appears " + resultOne[i].countOfLetter + " times."
         arrayToDisplay.push(strForCollect);
     }
@@ -558,7 +558,7 @@ function preraredToDisplay(string) {
     // como dado que estan intimamente relacionados.
     for (var i = index; i < strToArray.length; i = index) {
         index++;
-        var obj={};
+        var obj = {};
         obj.letter = strToArray[i];
         obj.countOfLetter = 1;
         for (var j = i + 1; j < strToArray.length;) {
@@ -579,7 +579,72 @@ function preraredToDisplay(string) {
 }
 
 
+/**
+ *
+ *18. Write a function for searching JavaScript arrays with a binary search.
+ *
+ */
 
+function searchBinaryForIndex(array, element) {
+    var arrayToAnalize = array;
+    var elementToSearch = element;
+    var indexStart = 0;
+    var indexLast = array.length - 1;
+    var indexMiddle = Math.floor((indexLast + indexStart) / 2);
+
+    if (arrayToAnalize[indexMiddle] !== elementToSearch) {
+        do {
+            if (elementToSearch < arrayToAnalize[indexMiddle]) {
+                indexLast = indexMiddle;
+                indexMiddle = Math.floor((indexLast + indexStart) / 2);
+            } else {
+                indexStart = indexMiddle;
+                indexMiddle = Math.floor((indexLast + indexStart) / 2);
+            }
+        }while(arrayToAnalize[indexMiddle] !== elementToSearch);
+    }
+
+    return indexMiddle;
+}
+
+/**
+ * 19. Write a JavaScript function that returns array elements larger than a number.
+ *
+ */
+
+function biggerElementsThan (array, number){
+    var arrayToAnalize = array;
+    var numberTop = number;
+    var result = [];
+
+    for(var i = 0; i < arrayToAnalize.length; i++){
+        if(arrayToAnalize[i] > numberTop){
+            result.push(arrayToAnalize[i]);
+        }
+    }
+    result = (result.length === 0) ? "Not match" : result.join(",");
+
+    return result;
+}
+
+
+/**
+ *20. Write a JavaScript function that generates a string id (specified length) of random characters
+ * --------without test-----------------
+ */
+
+function makeId(number) {
+    var char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var numberLength = number;
+    var id = "";
+
+    for(var i = 0; i < numberLength; i++){
+        var index = Math.floor(Math.random()* 62);
+        id += char[index];
+    }
+
+    return id;
+}
 
 module.exports = {
 
@@ -597,9 +662,12 @@ module.exports = {
     findSecondLowestAndGreatest: findSecondLowestAndGreatest,
     isPerfect: isPerfect,
     factors: factors,
-    amoutToCoins: amoutToCoins,
+    amountToCoins: amountToCoins,
     bElevateN: bElevateN,
     extractLetterO: extractLetterO,
-    occurrencesOfLetters: occurrencesOfLetters
+    occurrencesOfLetters: occurrencesOfLetters,
+    searchBinaryForIndex: searchBinaryForIndex,
+    makeId: makeId,
+    biggerElementsThan: biggerElementsThan
 };
 
