@@ -601,7 +601,7 @@ function searchBinaryForIndex(array, element) {
                 indexStart = indexMiddle;
                 indexMiddle = Math.floor((indexLast + indexStart) / 2);
             }
-        }while(arrayToAnalize[indexMiddle] !== elementToSearch);
+        } while (arrayToAnalize[indexMiddle] !== elementToSearch);
     }
 
     return indexMiddle;
@@ -612,13 +612,13 @@ function searchBinaryForIndex(array, element) {
  *
  */
 
-function biggerElementsThan (array, number){
+function biggerElementsThan(array, number) {
     var arrayToAnalize = array;
     var numberTop = number;
     var result = [];
 
-    for(var i = 0; i < arrayToAnalize.length; i++){
-        if(arrayToAnalize[i] > numberTop){
+    for (var i = 0; i < arrayToAnalize.length; i++) {
+        if (arrayToAnalize[i] > numberTop) {
             result.push(arrayToAnalize[i]);
         }
     }
@@ -638,12 +638,45 @@ function makeId(number) {
     var numberLength = number;
     var id = "";
 
-    for(var i = 0; i < numberLength; i++){
-        var index = Math.floor(Math.random()* 62);
+    for (var i = 0; i < numberLength; i++) {
+        var index = Math.floor(Math.random() * 62);
         id += char[index];
     }
 
     return id;
+}
+
+/**
+ * 21. Write a JavaScript function to get all possible subset with a fixed length
+ * (for example 2) combinations in an array.
+ * Sample array : [1, 2, 3] and subset length is 2
+ * Expected output : [[2, 1], [3, 1], [3, 2]
+ */
+//NO entendi.
+
+
+/**
+ * 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the
+ * number of occurrences of the specified letter within the string.
+ *
+ */
+
+function searchingLetterInString(string, letter) {
+    var stringGiven = string.replace(/ +/g, ""),
+        strToArray = Array.from(stringGiven),
+        letterSearch = letter,
+        countLetter = 0,
+        result;
+
+    for (var i = 0; i < strToArray.length; i++) {
+        if(stringGiven[i] === letterSearch){
+            countLetter += 1;
+        }
+    }
+    result = countLetter;
+
+    return result
+
 }
 
 module.exports = {
@@ -668,6 +701,7 @@ module.exports = {
     occurrencesOfLetters: occurrencesOfLetters,
     searchBinaryForIndex: searchBinaryForIndex,
     makeId: makeId,
-    biggerElementsThan: biggerElementsThan
+    biggerElementsThan: biggerElementsThan,
+    searchingLetterInString: searchingLetterInString
 };
 

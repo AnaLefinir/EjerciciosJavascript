@@ -226,8 +226,21 @@ describe('biggerElementsThan', function(){
     });
 });
 
-describe('', function(){
+describe('searchingLetterInString', function(){
+    it('a: should return 2 from "ana"', function(){
+        var resultExpected = 2;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.searchingLetterInString("ana", "a"));
+    });
 
+    it('A: should return 1 from "Ana"', function(){
+        var resultExpected = 1;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.searchingLetterInString("Ana", "A"));
+    });
+
+    it('b: should return 0 from "Ana"', function(){
+        var resultExpected = 0;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.searchingLetterInString("Ana", "B"));
+    });
 });
 
 describe('', function(){
