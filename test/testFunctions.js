@@ -289,9 +289,15 @@ describe('isNotRepeat2', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
+describe('bubbleSort', function(){
+    it('should return [15,12,11,8,5,2]', function(){
+        var resultExpected = [15,12,11,8,5,2];
+        assert.deepStrictEqual(resultExpected, functionsJavascript.bubbleSort([2,15,8,11,5,12]));
+    });
 
+    it('should return [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1]', function(){
+        var resultExpected = [3223, 546, 455, 345, 234, 213, 122, 98, 84, 64, 23, 12, 9, 4, 1];
+        assert.deepStrictEqual(resultExpected, functionsJavascript.bubbleSort([12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]));
     });
 });
 

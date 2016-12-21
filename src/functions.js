@@ -650,7 +650,7 @@ function makeId(number) {
  * 21. Write a JavaScript function to get all possible subset with a fixed length
  * (for example 2) combinations in an array.
  * Sample array : [1, 2, 3] and subset length is 2
- * Expected output : [[2, 1], [3, 1], [3, 2]
+ * Expected output : [[2, 1], [3, 1], [3, 2, 1]]
  */
 //NO entendi.
 
@@ -703,9 +703,9 @@ function isNotRepeat(string) {
                     break;
                 }
             }
-            if(result === undefined){
+            if (result === undefined) {
                 continue;
-            }else{
+            } else {
                 break;
             }
         }
@@ -736,11 +736,11 @@ function isNotRepeat2(string) {
     var stringToAnalize = string;
     var result = "Not match";
 
-    for(var i = 0; i < stringToAnalize.length; i++){
+    for (var i = 0; i < stringToAnalize.length; i++) {
         var letter = stringToAnalize[i];
         var newStr = stringToAnalize.replace(letter, "");
 
-        if(!newStr.includes(letter)){
+        if (!newStr.includes(letter)) {
             result = letter;
             break;
         }
@@ -749,6 +749,34 @@ function isNotRepeat2(string) {
 
     return result
 }
+
+
+/**
+ * 24. Write a JavaScript function to apply Bubble Sort algorithm.
+ *
+ */
+
+function bubbleSort(array) {
+    var arrayToSort = array,
+        result;
+
+    do {
+        var again = false;
+        for (var i = 0; i < arrayToSort.length; i++) {
+            if (arrayToSort[i] < arrayToSort[i + 1]) {
+                var fistElement = arrayToSort[i + 1],
+                    secondElement = arrayToSort[i];
+                arrayToSort.splice(i, 1, fistElement);
+                arrayToSort.splice(i + 1, 1, secondElement);
+                again = true;
+            }
+        }
+    }while(again);
+    result = arrayToSort;
+
+    return result;
+}
+
 
 module.exports = {
 
@@ -775,6 +803,8 @@ module.exports = {
     biggerElementsThan: biggerElementsThan,
     searchingLetterInString: searchingLetterInString,
     isNotRepeat: isNotRepeat,
-    isNotRepeat2: isNotRepeat2
+    isNotRepeat2: isNotRepeat2,
+    bubbleSort: bubbleSort,
+    bubbleSort: bubbleSort
 };
 
