@@ -348,20 +348,16 @@ describe('longestPalindromeInString', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
-
+describe('doSomething', function(){
+    it('should call sayHello and return "Hello!"', function(){
+        var resultExpected = "Hello!";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.doSomething(functionsJavascript.sayHello));
     });
 });
 
-describe('', function(){
-    it('', function(){
-
-    });
-});
-
-describe('', function(){
-    it('', function(){
-
+describe('chuchinEsHermosa', function(){
+    it('should return "chuchinEsHermosa"', function(){
+        var resultExpected = "chuchinEsHermosa";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.chuchinEsHermosa());
     });
 });

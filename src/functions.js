@@ -922,6 +922,29 @@ function toDisplay(array) {
     return result;
 }
 
+/**
+ * 28. Write a JavaScript program to pass a 'JavaScript function' as parameter.
+ */
+
+function doSomething(functionHello){
+
+         return functionHello();
+}
+
+function sayHello() {
+    return "Hello!";
+}
+
+/**
+ * 29. Write a JavaScript function to get the function name.
+ *
+ */
+
+function chuchinEsHermosa(){
+    return arguments.callee.name;
+}
+
+
 module.exports = {
 
     reverseANumber: reverseANumber,
@@ -951,6 +974,9 @@ module.exports = {
     bubbleSort: bubbleSort,
     longestCountryNames: longestCountryNames,
     longestSubstringWithoutRepeat: longestSubstringWithoutRepeat,
-    longestPalindromeInString: longestPalindromeInString
+    longestPalindromeInString: longestPalindromeInString,
+    doSomething: doSomething,
+    sayHello: sayHello,
+    chuchinEsHermosa: chuchinEsHermosa
 };
 
