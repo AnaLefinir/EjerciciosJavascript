@@ -331,9 +331,20 @@ describe('longestSubstringWithoutRepeat', function(){
 
 });
 
-describe('', function(){
-    it('', function(){
+describe('longestPalindromeInString', function(){
+    it('should return "anana" from "bananas"', function(){
+        var resultExpected = "anana";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestPalindromeInString("banana"));
+    });
 
+    it('should return "aca, ada" from "abracadabra"', function(){
+        var resultExpected = "aca, ada";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestPalindromeInString("abracadabra"));
+    });
+
+    it('should return "Not match" from "chuchin"', function(){
+        var resultExpected = "Not match";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestPalindromeInString("chuchin"));
     });
 });
 

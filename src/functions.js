@@ -818,7 +818,7 @@ function longestSubstringWithoutRepeat(string) {
         arrayOfPure = [],
         result;
 
-    if(stringGiven.length > 1) {
+    if (stringGiven.length > 1) {
         for (var i = 1; i < stringGiven.length; i++) {
             var strSub = stringGiven.substring(i);
             var isPure = isSomeRepeat(strSub);
@@ -827,7 +827,7 @@ function longestSubstringWithoutRepeat(string) {
                 arrayOfPure.push(strSub);
             }
         }
-    }else {
+    } else {
         arrayOfPure.push(stringGiven);
     }
 
@@ -855,10 +855,72 @@ function isSomeRepeat(string) {
 
 
 /**
+ * 27. Write a JavaScript function that returns the longest palindrome in a given string.
  *
- *
+ * Note: According to Wikipedia "In computer science, the longest palindromic substring or longest symmetric factor
+ * problem is the problem of finding a maximum-length contiguous substring of a given string that is also a palindrome.
+ * For example, the longest palindromic substring of "bananas" is "anana". The longest palindromic substring is not
+ * guaranteed to be unique; for example, in the string "abracadabra", there is no palindromic substring with length
+ * greater than three, but there are two palindromic substrings with length three, namely, "aca" and "ada".
+ * In some applications it may be necessary to return all maximal palindromic substrings (that is, all substrings that
+ * are themselves palindromes and cannot be extended to larger palindromic substrings) rather than returning only one
+ * substring or returning the maximum length of a palindromic substring.
  */
 
+function longestPalindromeInString(string) {
+    var strGiven = string,
+        arrayOfPalindrome = [],
+        result;
+
+    for (var i = 0; i < strGiven.length; i++) {
+        for (var j = strGiven.length; j > i; j--) {
+            var subStr = strGiven.substring(i, j);
+            if (isPalindrome(subStr) && subStr.length >= 3) {
+                arrayOfPalindrome.push(subStr);
+            }
+        }
+    }
+    result = toDisplay(arrayOfPalindrome);
+
+    return result;
+}
+
+
+function isTheLongest(array) {
+    var arrayToAnalize = array,
+        longestLength,
+        longestWord = [],
+        result;
+
+    longestLength = arrayToAnalize[0].length;
+    longestWord.push(arrayToAnalize[0]);
+    for (var i = 1; i < arrayToAnalize.length; i++) {
+        if (arrayToAnalize[i].length == longestLength) {
+            longestWord.push(arrayToAnalize[i]);
+        } else {
+            break;
+        }
+    }
+    result = longestWord.join(", ");
+
+    return result;
+}
+
+function toDisplay(array) {
+    var arrayOfPalindrome = array,
+        result;
+
+    if (arrayOfPalindrome.length !== 0) {
+        arrayOfPalindrome.sort(function (a, b) {
+            return b.length-a.length
+        });
+        result = isTheLongest(arrayOfPalindrome);
+    } else {
+        result = "Not match";
+    }
+
+    return result;
+}
 
 module.exports = {
 
@@ -888,6 +950,7 @@ module.exports = {
     isNotRepeat2: isNotRepeat2,
     bubbleSort: bubbleSort,
     longestCountryNames: longestCountryNames,
-    longestSubstringWithoutRepeat: longestSubstringWithoutRepeat
+    longestSubstringWithoutRepeat: longestSubstringWithoutRepeat,
+    longestPalindromeInString: longestPalindromeInString
 };
 
