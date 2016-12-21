@@ -669,7 +669,7 @@ function searchingLetterInString(string, letter) {
         result;
 
     for (var i = 0; i < strToArray.length; i++) {
-        if(stringGiven[i] === letterSearch){
+        if (stringGiven[i] === letterSearch) {
             countLetter += 1;
         }
     }
@@ -677,6 +677,79 @@ function searchingLetterInString(string, letter) {
 
     return result
 
+}
+
+/**
+ *
+ * 23. Write a JavaScript function to find the first not repeated character.
+ *
+ * */
+
+function isNotRepeat(string) {
+    var arrayOfOccurrence,
+        arrayOfString = Array.from(string),
+        lettersNotRepeat,
+        result;
+
+    arrayOfOccurrence = preraredToDisplay(string);
+    lettersNotRepeat = filterLettersNotRepeat(arrayOfOccurrence);
+    if (lettersNotRepeat === "Not match") {
+        result = "Not match";
+    } else {
+        for (var i = 0; i < arrayOfString.length; i++) {
+            for (var j = 0; j < arrayOfString.length; j++) {
+                if (arrayOfString[i] === lettersNotRepeat[j]) {
+                    result = lettersNotRepeat[j];
+                    break;
+                }
+            }
+            if(result === undefined){
+                continue;
+            }else{
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
+function filterLettersNotRepeat(array) {
+    var arrayOfOccurrences = array;
+    var notRepeat = [];
+    var result;
+
+    for (var i = 0; i < arrayOfOccurrences.length; i++) {
+        if (arrayOfOccurrences[i].countOfLetter === 1) {
+            notRepeat.push(arrayOfOccurrences[i].letter)
+        }
+    }
+
+    result = (notRepeat.length === 0) ? "Not match" : notRepeat.toString();
+
+    return result;
+}
+
+//Otra forma mas simple sin utilizar funciones ya hechas
+
+function isNotRepeat2(string) {
+    var stringToAnalize = string;
+    var result = "Not match";
+
+    for(var i = 0; i < stringToAnalize.length; i++){
+        var letter = stringToAnalize[i];
+        var newStr = stringToAnalize.replace(letter, "");
+
+        if(newStr.includes(letter)){
+           continue;
+        }else{
+            result = letter;
+            break;
+        }
+    }
+
+
+    return result
 }
 
 module.exports = {
@@ -702,6 +775,8 @@ module.exports = {
     searchBinaryForIndex: searchBinaryForIndex,
     makeId: makeId,
     biggerElementsThan: biggerElementsThan,
-    searchingLetterInString: searchingLetterInString
+    searchingLetterInString: searchingLetterInString,
+    isNotRepeat: isNotRepeat,
+    isNotRepeat2: isNotRepeat2
 };
 

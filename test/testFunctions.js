@@ -241,11 +241,51 @@ describe('searchingLetterInString', function(){
         var resultExpected = 0;
         assert.deepStrictEqual(resultExpected, functionsJavascript.searchingLetterInString("Ana", "B"));
     });
+
+
 });
 
-describe('', function(){
-    it('', function(){
+describe('isNotRepeat', function(){
+    it('should return letter "n"', function(){
+        var resultExpected = "n";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat("ana"));
+    });
 
+    it('should return letter "n"', function(){
+        var resultExpected = "n";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat("anabata"));
+    });
+
+    it('should return letter "Not match"', function(){
+        var resultExpected = "Not match";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat("lalalal"));
+    });
+
+    it('should return letter "e"', function(){
+        var resultExpected = "e";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat("lalalale"));
+    });
+});
+
+describe('isNotRepeat2', function(){
+    it('should return letter "n"', function(){
+        var resultExpected = "n";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat2("ana"));
+    });
+
+    it('should return letter "n"', function(){
+        var resultExpected = "n";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat2("anabata"));
+    });
+
+    it('should return letter "Not match"', function(){
+        var resultExpected = "Not match";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat2("lalalal"));
+    });
+
+    it('should return letter "e"', function(){
+        var resultExpected = "e";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.isNotRepeat2("lalalale"));
     });
 });
 
