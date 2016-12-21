@@ -740,9 +740,7 @@ function isNotRepeat2(string) {
         var letter = stringToAnalize[i];
         var newStr = stringToAnalize.replace(letter, "");
 
-        if(newStr.includes(letter)){
-           continue;
-        }else{
+        if(!newStr.includes(letter)){
             result = letter;
             break;
         }
