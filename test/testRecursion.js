@@ -17,19 +17,19 @@ describe('factorial', function(){
     });
 });
 
-describe('', function(){
-    it('', function(){
-        /*var resultExpected;
-        assert.deepStrictEqual(resultExpected, functionsJavascript);
-        */
+describe('gcd', function(){
+    it('should return 91 from calculate gcd(2366, 273)', function(){
+        var resultExpected = 91;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.gcd(2366, 273));
+
     });
 });
 
-describe('', function(){
-    it('', function(){
-        /*var resultExpected;
-         assert.deepStrictEqual(resultExpected, functionsJavascript);
-         */
+describe('integerBetween', function(){
+    it('should return [2,3,4]', function(){
+        var resultExpected = [2,3,4];
+         assert.deepStrictEqual(resultExpected, recursionJavascript.integerBetween(1,5));
+
     });
 });
 

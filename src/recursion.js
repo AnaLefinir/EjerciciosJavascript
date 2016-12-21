@@ -21,16 +21,48 @@ function factorial (number) {
     return result;
 }
 
+/**
+ * 2. Write a JavaScript program to find the greatest common divisor (gcd) of two positive numbers.
+ * Utiliza el Algoritmo de Euclides
+ */
+
+function gcd (a, b){
+    var result;
+
+    if(!b){
+        result = a;
+    }else{
+        result = gcd(b, a%b);
+    }
+
+    return result;
+}
 
 
+/**
+ * 3. Write a JavaScript program to get the integers in range (x, y)
+ *
+ */
+var range = [];
+function integerBetween (a, b){
+    if(!b){
+        range.push(-1);
+    }else if(b === a+1){
+        range.push(0);
+    }else{
+        a+=1;
+        if(a<b){
+            range.push(a);
+            integerBetween(a,b);
+        }
+    }
+}
 
 
-
-
-
-
-
-
+/**
+ *
+ * 
+ */
 
 
 
@@ -44,5 +76,7 @@ function factorial (number) {
 
 
 module.exports = {
-    factorial: factorial
+    factorial: factorial,
+    gcd: gcd,
+    integerBetween: integerBetween
 };
