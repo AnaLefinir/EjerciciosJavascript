@@ -771,11 +771,93 @@ function bubbleSort(array) {
                 again = true;
             }
         }
-    }while(again);
+    } while (again);
     result = arrayToSort;
 
     return result;
 }
+
+
+/**
+ *25. Write a JavaScript function that accept a list of country names as input and returns the longest
+ * country name as output
+ *
+ */
+
+function longestCountryNames(array) {
+    var arrayOfCountryNames = array,
+        longestLength,
+        longestName = [],
+        result;
+
+    arrayOfCountryNames.sort(function (a, b) {
+        return b.length - a.length
+    });
+    longestLength = arrayOfCountryNames[0].length;
+    longestName.push(arrayOfCountryNames[0]);
+
+    for (var i = 1; i < arrayOfCountryNames.length; i++) {
+        if (arrayOfCountryNames[i].length === longestLength) {
+            longestName.push(arrayOfCountryNames[i])
+        } else {
+            break;
+        }
+    }
+    result = longestName.join(", ");
+
+    return result
+}
+
+/**
+ * 26. Write a JavaScript function to find longest substring in a given a string without repeating characters.
+ *
+ */
+
+function longestSubstringWithoutRepeat(string) {
+    var stringGiven = string,
+        arrayOfPure = [],
+        result;
+
+    if(stringGiven.length > 1) {
+        for (var i = 1; i < stringGiven.length; i++) {
+            var strSub = stringGiven.substring(i);
+            var isPure = isSomeRepeat(strSub);
+
+            if (!isPure) {
+                arrayOfPure.push(strSub);
+            }
+        }
+    }else {
+        arrayOfPure.push(stringGiven);
+    }
+
+    result = arrayOfPure[0];
+
+    return result;
+}
+
+function isSomeRepeat(string) {
+    var stringToAnalize = string,
+        result = false;
+
+    for (var i = 0; i < stringToAnalize.length; i++) {
+        var letter = stringToAnalize[i];
+        var newStr = stringToAnalize.replace(letter, "");
+
+        if (newStr.includes(letter)) {
+            result = true;
+            break;
+        }
+    }
+
+    return result;
+}
+
+
+/**
+ *
+ *
+ */
 
 
 module.exports = {
@@ -805,6 +887,7 @@ module.exports = {
     isNotRepeat: isNotRepeat,
     isNotRepeat2: isNotRepeat2,
     bubbleSort: bubbleSort,
-    bubbleSort: bubbleSort
+    longestCountryNames: longestCountryNames,
+    longestSubstringWithoutRepeat: longestSubstringWithoutRepeat
 };
 

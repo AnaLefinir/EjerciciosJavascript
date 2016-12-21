@@ -301,6 +301,54 @@ describe('bubbleSort', function(){
     });
 });
 
+describe('longestCountryNames', function(){
+    it('should return "United States of America"', function(){
+        var resultExpected = "United States of America";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestCountryNames(["Australia", "Germany", "United States of America"]));
+    });
+
+    it('should return "Australia, Argentina"', function(){
+        var resultExpected = "Australia, Argentina";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestCountryNames(["Australia", "Germany", "Argentina"]));
+    });
+});
+
+describe('longestSubstringWithoutRepeat', function(){
+    it('should return "gle.com"', function(){
+        var resultExpected = "gle.com";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestSubstringWithoutRepeat("google.com"));
+    });
+
+    it('should return "xample.co"', function(){
+        var resultExpected = "xample.co";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestSubstringWithoutRepeat("example.co"));
+    });
+
+    it('should return "a"', function(){
+        var resultExpected = "a";
+        assert.deepStrictEqual(resultExpected, functionsJavascript.longestSubstringWithoutRepeat("a"));
+    });
+
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
+describe('', function(){
+    it('', function(){
+
+    });
+});
+
 describe('', function(){
     it('', function(){
 
