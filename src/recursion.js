@@ -80,10 +80,31 @@ function sumOfArray(array) {
     return result;
 }
 
+/**
+ * 5. Write a JavaScript program to compute the exponent of a number.
+ *
+ */
+
+function baseToExponent(base, exponent) {
+    var result;
+
+    if(exponent === 1){
+        result = base;
+    }else if(exponent > 1){
+        var newExponent = --exponent;
+        result = base * baseToExponent(base, newExponent);
+    }else if(exponent === 0){
+        result = 1;
+    }
+
+    return result;
+}
+
 
 module.exports = {
     factorial: factorial,
     gcd: gcd,
     range: range,
-    sumOfArray: sumOfArray
+    sumOfArray: sumOfArray,
+    baseToExponent: baseToExponent
 };

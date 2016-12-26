@@ -53,10 +53,43 @@ describe('sumOfArray', function () {
     });
 });
 
+describe('exponent', function () {
+    it('should return 64 from (8,2)', function () {
+        var resultExpected = 64;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.baseToExponent(8,2));
+    });
+
+    it('should return 8 from (8,1)', function () {
+        var resultExpected = 8;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.baseToExponent(8,1));
+    });
+
+    it('should return 1 from (8,0)', function () {
+        var resultExpected = 1;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.baseToExponent(8,0));
+    });
+});
+
 describe('', function () {
     it('', function () {
         /*var resultExpected;
-         assert.deepStrictEqual(resultExpected, functionsJavascript);
+         assert.deepStrictEqual(resultExpected, recursionJavascript);
+         */
+    });
+});
+
+describe('', function () {
+    it('', function () {
+        /*var resultExpected;
+         assert.deepStrictEqual(resultExpected, recursionJavascript);
+         */
+    });
+});
+
+describe('', function () {
+    it('', function () {
+        /*var resultExpected;
+         assert.deepStrictEqual(resultExpected, recursionJavascript);
          */
     });
 });
