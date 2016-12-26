@@ -26,12 +26,10 @@ describe('gcd', function () {
 });
 
 describe('integerBetween', function () {
-    /*it('should return [2,3,4]', function () {
-        var range = [];
-        recursionJavascript.integerBetween(1, 5);
-        var resultExpected = [2, 3, 4];
-        assert.deepStrictEqual(resultExpected, range);
-    });*/
+    it('', function () {
+        var resultExpected = "";
+        assert.deepStrictEqual(resultExpected, recursionJavascript.integerBetween());
+    });
 });
 
 describe('', function () {
