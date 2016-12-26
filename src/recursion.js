@@ -69,12 +69,14 @@ function range(start, end) {
 
 function sumOfArray(array) {
     var arrayGiven = array,
-        result;
+        result = 0;
+
     if(arrayGiven.length === 1){
         result = arrayGiven[0];
     }else if(arrayGiven.length > 1){
         result = arrayGiven[0] + sumOfArray(arrayGiven.slice(1));
     }
+
     return result;
 }
 
@@ -82,5 +84,6 @@ function sumOfArray(array) {
 module.exports = {
     factorial: factorial,
     gcd: gcd,
-    range: range
+    range: range,
+    sumOfArray: sumOfArray
 };
