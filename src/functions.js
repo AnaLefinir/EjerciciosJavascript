@@ -595,10 +595,10 @@ function searchBinaryForIndex(array, element) {
     if (arrayToAnalize[indexMiddle] !== elementToSearch) {
         do {
             if (elementToSearch < arrayToAnalize[indexMiddle]) {
-                indexLast = indexMiddle;
+                indexLast = indexMiddle-1;
                 indexMiddle = Math.floor((indexLast + indexStart) / 2);
             } else {
-                indexStart = indexMiddle;
+                indexStart = indexMiddle+1;
                 indexMiddle = Math.floor((indexLast + indexStart) / 2);
             }
         } while (arrayToAnalize[indexMiddle] !== elementToSearch);

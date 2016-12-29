@@ -70,26 +70,71 @@ describe('exponent', function () {
     });
 });
 
-describe('', function () {
-    it('', function () {
-        /*var resultExpected;
-         assert.deepStrictEqual(resultExpected, recursionJavascript);
-         */
+describe('fibonacciNumbers', function () {
+    it('should return [0]', function () {
+        var resultExpected = [0];
+        assert.deepStrictEqual(resultExpected, recursionJavascript.fibonacci(1));
+
+    });
+
+    it('should return [0,1]', function () {
+        var resultExpected = [0,1];
+        assert.deepStrictEqual(resultExpected, recursionJavascript.fibonacci(2));
+
     });
 });
 
-describe('', function () {
-    it('', function () {
-        /*var resultExpected;
-         assert.deepStrictEqual(resultExpected, recursionJavascript);
-         */
+describe('isEven', function () {
+    it('should return true of 0', function () {
+        var resultExpected = true;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.isEven(0));
+
+    });
+
+    it('should return true of 2', function () {
+        var resultExpected = true;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.isEven(2));
+
+    });
+
+    it('should return true of 55', function () {
+        var resultExpected = false;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.isEven(55));
+
+    });
+
+    it('should return true of 100', function () {
+        var resultExpected = true;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.isEven(100));
+
+    });
+
+    it('should return true of -100', function () {
+        var resultExpected = true;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.isEven(-100));
+
+    });
+
+    it('should return true of -55', function () {
+        var resultExpected = false;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.isEven(-55));
+
     });
 });
 
-describe('', function () {
-    it('', function () {
-        /*var resultExpected;
-         assert.deepStrictEqual(resultExpected, recursionJavascript);
-         */
+describe('binarySearch', function () {
+    it('should return index 2', function(){
+        var resultExpected = 2;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.binarySearch(4, [1,2,4,5,8]));
+    });
+
+    it('should return index 4', function(){
+        var resultExpected = 4;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.binarySearch(6, [1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23]));
+    });
+
+    it('should return index 3', function(){
+        var resultExpected = 3;
+        assert.deepStrictEqual(resultExpected, recursionJavascript.binarySearch(3, [0,1,2,3]));
     });
 });

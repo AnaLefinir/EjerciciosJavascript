@@ -212,6 +212,11 @@ describe('searchBinaryForIndex', function(){
         var resultExpected = 4;
         assert.deepStrictEqual(resultExpected, functionsJavascript.searchBinaryForIndex([1, 2, 3, 5, 6, 7, 10, 11, 14, 15, 17, 19, 20, 22, 23], 6));
     });
+
+    it('should return index 3', function(){
+        var resultExpected = 3;
+        assert.deepStrictEqual(resultExpected, functionsJavascript.searchBinaryForIndex([0,1,2,3], 3));
+    });
 });
 
 describe('biggerElementsThan', function(){
