@@ -190,6 +190,22 @@ function binarySearch(number, array, indexS, indexE) {
     return result;
 }
 
+
+/**
+ * 9. Write a merge sort program in JavaScript.
+ *
+ */
+
+function mergeSort(array, again){
+    var index = 0;
+    var again = (again === undefined) ? true : again;
+
+    if(d){
+
+    }else if(d){
+
+    }
+}
 module.exports = {
     factorial: factorial,
     gcd: gcd,
@@ -198,5 +214,6 @@ module.exports = {
     baseToExponent: baseToExponent,
     fibonacci: fibonacci,
     isEven: isEven,
-    binarySearch: binarySearch
+    binarySearch: binarySearch,
+    mergeSort: mergeSort
 };
