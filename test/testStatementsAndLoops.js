@@ -65,14 +65,16 @@ describe('largestOfFive', function () {
 
 
 
-/*
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
+
+describe('isEvenOrOdd', function () {
+    it('should return a string',function () {
+        var resultExpect = "0 is even.\n1 is odd.\n2 is even.\n3 is odd.\n4 is even.\n5 is odd.\n6 is even.\n7 is odd.\n8 is even.\n9 is odd.\n10 is even.\n11 is odd.\n12 is even.\n13 is odd.\n14 is even.\n15 is odd." ;
+        assert.deepStrictEqual(resultExpect, loopsJavascript.isEvenOrOdd());
     })
 });
 
+
+/*
 describe('...', function () {
     it('',function () {
         var resultExpect;
