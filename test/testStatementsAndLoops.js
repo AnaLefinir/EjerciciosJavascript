@@ -74,14 +74,17 @@ describe('isEvenOrOdd', function () {
 });
 
 
-/*
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
+
+describe('grade', function () {
+    it('should return grade B',function () {
+        var studentsMarks = [["David", 80],["Vinoth", 77],["Divya", 88],["Ishitha", 95],["Thomas", 68]];
+        var resultExpect =  "Grade is B";
+        assert.deepStrictEqual(resultExpect, loopsJavascript.grade(studentsMarks));
     })
 });
 
+
+/*
 describe('...', function () {
     it('',function () {
         var resultExpect;

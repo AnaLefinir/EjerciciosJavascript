@@ -103,11 +103,57 @@ function isEvenOrOdd() {
 
     return result;
 }
+
+/**
+ * 6. Write a JavaScript program which compute, the average marks of the following students.
+ * Then, this average is used to determine the corresponding grade.
+ *
+ *
+ */
+
+
+
+function grade(array) {
+    var arrayLength = array.length,
+        sum = 0,
+        avg,
+        grade,
+        result;
+
+    for(var i = 0 ; i < arrayLength; i++){
+        sum += array[i][1];
+    }
+    avg = sum/arrayLength;
+    grade = whichGrade(avg);
+    result = "Grade is " + grade;
+
+    return result;
+}
+
+function whichGrade(a) {
+    var result;
+
+    if(a < 60){
+        result = "F";
+    }else if (a < 70){
+        result = "D";
+    }else if (a < 80){
+        result = "C";
+    }else if (a < 90){
+        result = "B";
+    }else if (a < 100){
+        result = "A";
+    }
+
+    return result;
+}
+
 module.exports = {
     largest: largest,
     signOfProduct: signOfProduct,
     sort: sort,
     largestOfFive: largestOfFive,
-    isEvenOrOdd: isEvenOrOdd
+    isEvenOrOdd: isEvenOrOdd,
+    grade: grade
 
 };
