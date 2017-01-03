@@ -55,14 +55,17 @@ describe('sort', function () {
     });
 });
 
-/*
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
+
+describe('largestOfFive', function () {
+    it('should return 0',function () {
+        var resultExpect = 0;
+        assert.deepStrictEqual(resultExpect, loopsJavascript.largestOfFive(-5, -2, -6, 0, -1));
     })
 });
 
+
+
+/*
 describe('...', function () {
     it('',function () {
         var resultExpect;

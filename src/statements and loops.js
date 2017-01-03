@@ -61,10 +61,25 @@ function sort(a,b,c) {
     return result;
 }
 
+/**
+ * 4. Write a JavaScript conditional statement to find the largest of five numbers.
+ * Sample numbers : -5, -2, -6, 0, -1
+ * Output : 0
+ */
 
+function largestOfFive(a,b,c,d,e) {
+    var array = [a, b, c, d, e],
+        result;
+
+    array.sort(function(a,b){return b-a});
+    result = array[0];
+
+    return result;
+}
 module.exports = {
     largest: largest,
     signOfProduct: signOfProduct,
-    sort: sort
+    sort: sort,
+    largestOfFive: largestOfFive
 
 };
