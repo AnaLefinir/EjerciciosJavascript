@@ -19,7 +19,7 @@ describe('largest', function () {
     it('should return 0',function () {
         var resultExpect = 0;
         assert.deepStrictEqual(resultExpect, loopsJavascript.largest(0,-1));
-    })
+    });
 });
 
 
@@ -38,18 +38,24 @@ describe('signOfProduct', function () {
     it('should return neutro sign',function () {
         var resultExpect = "The sign is neutro";
         assert.deepStrictEqual(resultExpect, loopsJavascript.signOfProduct(-3,2,0));
-    })
+    });
 });
 
+
+
+describe('sort', function () {
+    it('shoult return "4, 0, -1"',function () {
+        var resultExpect = "4, 0, -1";
+        assert.deepStrictEqual(resultExpect, loopsJavascript.sort(0,-1,4));
+    });
+
+    it('shoult return "0, -1, -2"',function () {
+        var resultExpect = "0, -1, -2";
+        assert.deepStrictEqual(resultExpect, loopsJavascript.sort(0,-1,-2));
+    });
+});
 
 /*
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
-    })
-});
-
 describe('...', function () {
     it('',function () {
         var resultExpect;

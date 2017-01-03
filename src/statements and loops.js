@@ -23,7 +23,6 @@ function largest(a, b) {
 
 /**
  * 2. Write a JavaScript conditional statement to find the sign of product of three numbers.
- * Display an alert box with the specified sign.
  * Sample numbers : 3, -7, 2
  * Output : The sign is -
  */
@@ -44,13 +43,28 @@ function signOfProduct(a,b,c) {
 }
 
 
+/**
+ * 3. Write a JavaScript conditional statement to sort three numbers.
+ * Sample numbers : 0, -1, 4
+ * Output : 4, 0, -1
+ */
 
+function sort(a,b,c) {
+    var array = [a, b, c],
+        result;
 
+    array.sort(function (a,b) {
+        return b-a;
+    });
+    result = array.join(", ");
 
+    return result;
+}
 
 
 module.exports = {
     largest: largest,
-    signOfProduct: signOfProduct
+    signOfProduct: signOfProduct,
+    sort: sort
 
 };
