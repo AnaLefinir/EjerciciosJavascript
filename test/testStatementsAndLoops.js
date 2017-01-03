@@ -23,14 +23,26 @@ describe('largest', function () {
 });
 
 
-/*
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
+
+describe('signOfProduct', function () {
+    it('should return negative sign',function () {
+        var resultExpect = "The sign is -";
+        assert.deepStrictEqual(resultExpect, loopsJavascript.signOfProduct(3,-2,1));
+    });
+
+    it('should return positive sign',function () {
+        var resultExpect = "The sign is +";
+        assert.deepStrictEqual(resultExpect, loopsJavascript.signOfProduct(-3,-2,1));
+    });
+
+    it('should return neutro sign',function () {
+        var resultExpect = "The sign is neutro";
+        assert.deepStrictEqual(resultExpect, loopsJavascript.signOfProduct(-3,2,0));
     })
 });
 
+
+/*
 describe('...', function () {
     it('',function () {
         var resultExpect;
