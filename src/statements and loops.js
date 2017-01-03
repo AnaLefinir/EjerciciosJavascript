@@ -148,6 +148,38 @@ function whichGrade(a) {
     return result;
 }
 
+/**
+ * 7. Write a JavaScript program which iterates the integers from 1 to 100. But for multiples of three print "Fizz"
+ * instead of the number and for the multiples of five print "Buzz".
+ * For numbers which are multiples of both three and five print "FizzBuzz"
+ *
+ */
+
+function crazyMultiplesOf3And5(){
+    var result = [];
+
+    for(var i = 1; i < 101; i++){
+        var isMultiple3 = i%3;
+        var isMultiple5 = i%5;
+
+        if(isMultiple3===0 && isMultiple5=== 0){
+            var str5and3 = i + " is FizzBuzz!.";
+            result.push(str5and3);
+        }else if (isMultiple5===0){
+            var str5 = i + " is Buzz!.";
+            result.push(str5);
+        }else if (isMultiple3===0){
+            var str3 = i + " is Fizz!.";
+            result.push(str3);
+        }else{
+            result.push(i+".");
+        }
+    }
+    result = result.join("\n");
+
+    return result;
+}
+
 module.exports = {
     largest: largest,
     signOfProduct: signOfProduct,
