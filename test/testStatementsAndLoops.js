@@ -84,42 +84,30 @@ describe('grade', function () {
 });
 
 
-/*
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
+
+describe('armstrongNumber', function () {
+    it('should return 4 Armstrong Number',function () {
+        var resultExpect = "153, 370, 371, 407";
+        assert.deepStrictEqual(resultExpect, loopsJavascript.armstrongNumber());
     })
 });
 
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
+
+describe('gcd', function () {
+    it('should return 2, from 2154 and 458',function () {
+        var resultExpect = 2;
+        assert.deepStrictEqual(resultExpect, loopsJavascript.gcd(2154, 458));
     })
 });
 
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
+
+describe('sumMultiplesOf3and5', function () {
+    it('should return 233168',function () {
+        var resultExpect = 233168;
+        assert.deepStrictEqual(resultExpect, loopsJavascript.sumMultiplesOf3and5());
     })
 });
 
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
-    })
-});
-
-describe('...', function () {
-    it('',function () {
-        var resultExpect;
-        assert.deepStrictEqual(resultExpect, loopsJavascript);
-    })
-});
-*/
 
 
 

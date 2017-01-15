@@ -180,12 +180,129 @@ function crazyMultiplesOf3And5(){
     return result;
 }
 
+/**
+ * 8. According to Wikipedia a happy number is defined by the following process :
+ * "Starting with any positive integer, replace the number by the sum of the squares of its digits,
+ * and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which
+ * does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not
+ * end in 1 are unhappy numbers (or sad numbers)".
+ * Write a JavaScript program to find and print the first 5 happy numbers.
+ *
+ */
+
+function happyNumbers() {
+    var result;
+    var arrayHappy = [];
+
+    do{
+        var i = 0;
+        var numberElement = Array.from("i");
+        var isHappy;
+        for(var j = 0; j < numberElement.length; j++){
+            Math.pow(j, 2);
+        }
+
+        ++i;
+    }while(arrayHappy.length === 5);
+
+    return result;
+}
+
+/**
+ * 9. Write a JavaScript program to find the armstrong numbers of 3 digits.
+ * Note : An Armstrong number of three digits is an integer such that the sum
+ * of the cubes of its digits is equal to the number itself. For example, 371 is an
+ * Armstrong number since 3**3 + 7**3 + 1**3 = 371.
+ */
+
+function armstrongNumber() {
+    var result = [];
+
+    for(var i = 100; i < 1000; i++){
+        var isArmstrong = Array.from(i.toString());
+        var count = Math.pow(isArmstrong[0], 3) + Math.pow(isArmstrong[1], 3) + Math.pow(isArmstrong[2], 3);
+
+        if(count === i){
+            result.push(i);
+        }
+    }
+
+    result = result.join(", ");
+    return result;
+}
+
+/**
+ * 10. Write a JavaScript program to construct the following pattern, using a nested for loop.
+ *
+ * *
+ * * *
+ * * * *
+ * * * * *
+ */
+
+function triangleStar() {
+    var stars;
+    var result;
+
+    for(var i = 1; i < 6; i++){
+        for(var j = 0 ; j < i ;j++){
+            stars = (stars === undefined) ? "*" : stars += "*";
+        }
+        result = (result === undefined) ? stars+"\n" : result += stars+"\n";
+        stars="";
+    }
+
+    return result;
+}
+
+/**
+ * 11. Write a JavaScript program to compute the greatest common divisor (GCD) of two positive integers.
+ *
+ */
+
+function gcd(a, b){
+    while(a !== b){
+
+        if(a > b){
+            a = a-b;
+        }else{
+            b = b - a;
+        }
+    }
+
+    return a;
+}
+
+/**
+ * 12. Write a JavaScript program to sum the multiples of 3 and 5 under 1000.
+ *
+ */
+
+function sumMultiplesOf3and5 (){
+    var sum = 0;
+
+    for(var i = 0; i < 1000; i++){
+        var isMultiple3 = i%3;
+        var isMultiple5 = i%5;
+
+        if(isMultiple3 === 0 || isMultiple5 === 0){
+            sum += i;
+        }
+    }
+
+    return sum;
+}
+
 module.exports = {
     largest: largest,
     signOfProduct: signOfProduct,
     sort: sort,
     largestOfFive: largestOfFive,
     isEvenOrOdd: isEvenOrOdd,
-    grade: grade
+    grade: grade,
+    armstrongNumber: armstrongNumber,
+    triangleStar: triangleStar,
+    gcd: gcd,
+    sumMultiplesOf3and5: sumMultiplesOf3and5
 
 };
